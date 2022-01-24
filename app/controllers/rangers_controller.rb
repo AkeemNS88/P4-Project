@@ -1,2 +1,0 @@
-class RangersController < ApplicationController
-end

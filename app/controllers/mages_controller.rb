@@ -1,2 +1,0 @@
-class MagesController < ApplicationController
-end

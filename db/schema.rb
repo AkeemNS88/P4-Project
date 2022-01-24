@@ -10,27 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_24_180925) do
+ActiveRecord::Schema.define(version: 2022_01_24_175005) do
 
-  create_table "enemies", force: :cascade do |t|
-    t.string "name"
-    t.integer "health"
-    t.integer "wealth"
-    t.integer "energy"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "mages", force: :cascade do |t|
-    t.string "name"
-    t.integer "health"
-    t.integer "wealth"
-    t.integer "energy"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "rangers", force: :cascade do |t|
+  create_table "masters", force: :cascade do |t|
     t.string "name"
     t.integer "health"
     t.integer "wealth"
@@ -40,39 +22,10 @@ ActiveRecord::Schema.define(version: 2022_01_24_180925) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.string "warrior_skill_one"
-    t.string "warrior_skill_two"
-    t.string "mage_skill_one"
-    t.string "mage_skill_two"
-    t.string "ranger_skill_one"
-    t.string "ranger_skill_two"
-    t.string "enemy_skill_one"
-    t.string "enemy_skill_two"
-    t.string "enemy_skill_three"
-    t.string "enemy_skill_four"
-    t.integer "warrior_id", null: false
-    t.integer "ranger_id", null: false
-    t.integer "mage_id", null: false
-    t.integer "enemy_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["enemy_id"], name: "index_skills_on_enemy_id"
-    t.index ["mage_id"], name: "index_skills_on_mage_id"
-    t.index ["ranger_id"], name: "index_skills_on_ranger_id"
-    t.index ["warrior_id"], name: "index_skills_on_warrior_id"
-  end
-
-  create_table "warriors", force: :cascade do |t|
     t.string "name"
-    t.integer "health"
-    t.integer "wealth"
-    t.integer "energy"
+    t.integer "master_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "skills", "enemies"
-  add_foreign_key "skills", "mages"
-  add_foreign_key "skills", "rangers"
-  add_foreign_key "skills", "warriors"
 end

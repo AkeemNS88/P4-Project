@@ -1,2 +1,0 @@
-class WarriorsController < ApplicationController
-end
