@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sword_skill: MyString
+  axe_skill: MyString
+  wand_skill: MyString
+  staff_skill: MyString
+  bow_skill: MyString
+  crossbow_skill: MyString
+  enemy_skill: MyString
+  enemy_skill_two: MyString
+  enemy_skill_three: MyString
+  enemy_skill_four: MyString
+  enemy_skill_five: MyString
+  weapon: one
+
+two:
+  sword_skill: MyString
+  axe_skill: MyString
+  wand_skill: MyString
+  staff_skill: MyString
+  bow_skill: MyString
+  crossbow_skill: MyString
+  enemy_skill: MyString
+  enemy_skill_two: MyString
+  enemy_skill_three: MyString
+  enemy_skill_four: MyString
+  enemy_skill_five: MyString
+  weapon: two
