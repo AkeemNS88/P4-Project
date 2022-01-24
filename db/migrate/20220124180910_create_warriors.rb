@@ -5,7 +5,6 @@ class CreateWarriors < ActiveRecord::Migration[7.0]
       t.integer :health
       t.integer :wealth
       t.integer :energy
-      t.references :skill, null: false, foreign_key: true
 
       t.timestamps
     end

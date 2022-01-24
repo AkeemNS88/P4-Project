@@ -4,7 +4,7 @@ class CreateEnemies < ActiveRecord::Migration[7.0]
       t.string :name
       t.integer :health
       t.integer :wealth
-      t.references :skill, null: false, foreign_key: true
+      t.integer :energy
 
       t.timestamps
     end
