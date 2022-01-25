@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   background-image: url("Images/papyrus.jpg");
 }
 
@@ -10,8 +9,9 @@ code {
 
 .welcome {
   text-align: center;
-  margin-top: 50px;
-  font-size: 2em;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 3.5em;
 }
 
 .portal{
@@ -116,4 +116,38 @@ margin-right: 40px;
 
 .ranger{
   margin-left: 200px;
+}
+
+.class-descrip{
+  display: block;
+float: right; 
+width: 69%;
+  
+}
+
+.choose-div{
+  width: 400px;
+}
+
+.choose-champ{
+  display: block;
+  float: right;
+  width: 20%;
+  height:80px;
+  margin-right: 800px;
+  font-size: 20px;
+
+}
+
+#wrapper {
+min-width: 1080px;
+max-width: 2160px;
+margin-right: auto;
+margin-left: auto;
+
+}
+
+.class-text{
+  display: inline-flex;
+  width: 300px
 }
