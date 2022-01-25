@@ -1,13 +1,17 @@
 import React from "react";
 
-function Mage() {
-    return(
+function Signup() {
+
+
+    return (
+
         <div>
             <div>
-                <h1>Mage</h1>
+                <h1>Signups Go Here</h1>
             </div>
         </div>
+
     )
 }
 
-export default Mage
+export default Signup

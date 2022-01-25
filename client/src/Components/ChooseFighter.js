@@ -1,13 +1,13 @@
 import React from "react";
 
-function Mage() {
+function ChooseFighter() {
     return(
         <div>
             <div>
-                <h1>Mage</h1>
+                <h1>Choose Fighter Here</h1>
             </div>
         </div>
     )
 }
 
-export default Mage
+export default ChooseFighter

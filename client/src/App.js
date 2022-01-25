@@ -1,6 +1,7 @@
 import portal from './Images/p2.gif'
 import Welcome from './Components/Welcome';
-import Button from 'react-bootstrap/Button';
+// import button from 'react-bootstrap/Button';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
 
       </div>
       <div className='enter-button'>
-        <Button type="button" class="btn btn-secondary">Enter If You Dare!</Button>
+      <button type="button" class="btn btn-dark btn-lg">Enter If You Dare</button>
       </div>
     </div>
   );

@@ -2,17 +2,12 @@ import React from "react";
 
 function Welcome(){
     
-    
-    
-    
-
-
-
+   
 
 
     return(
         <div>
-            <h1>Welcome to Cascade</h1>
+            <h1 className="welcome">Welcome to Cascade</h1>
         </div>
     )
 }
