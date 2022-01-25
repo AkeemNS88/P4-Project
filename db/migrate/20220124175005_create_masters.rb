@@ -5,6 +5,8 @@ class CreateMasters < ActiveRecord::Migration[7.0]
       t.integer :health
       t.integer :wealth
       t.integer :energy
+      t.belongs_to :user, polymorphic: true
+      
 
       t.timestamps
     end

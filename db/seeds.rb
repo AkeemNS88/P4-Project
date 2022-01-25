@@ -21,3 +21,4 @@ enemy_skill_three = Skill.create(name: "Upheaval", master_id: golem.id)
 enemy_skill_four = Skill.create(name: "Chaos Ray", master_id: banshee.id)
 
 
+
