@@ -32,3 +32,44 @@ code {
 .btn:hover{
   transform: scale(1.2);
 }
+
+.encounter-title{
+  text-align: center;
+}
+
+.choice-button{
+  display: block;
+  justify-content: center;
+  display: flex;
+}
+
+.encounter-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 800px;
+  margin-bottom: 40px;
+
+}
+
+.btn-secondary{
+padding-left: 20px;
+padding-right: 20px;
+margin-left: 40px;
+margin-right: 40px;
+}
+.btn-secondary:hover{
+  transform: scale(1.05);
+}
+
+span{
+  animation: blinker 1s linear infinite;
+
+}
+
+@keyframes blinker{
+  50%{
+    opacity: 0;
+  }
+}
