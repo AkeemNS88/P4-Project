@@ -48,7 +48,7 @@ code {
   margin-left: auto;
   margin-right: auto;
   margin-top: 40px;
-  width: 800px;
+  width: 600px;
   margin-bottom: 40px;
 
 }
@@ -63,13 +63,20 @@ margin-right: 40px;
   transform: scale(1.05);
 }
 
-span{
-  animation: blinker 1s linear infinite;
-
+.story-text{
+  font-family: sans-serif;
+  font-weight:800;
+  font-size: 1.2em;
+  text-align: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-@keyframes blinker{
-  50%{
-    opacity: 0;
-  }
+.text-holder{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  padding-bottom: 30px;
 }

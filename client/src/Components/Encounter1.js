@@ -1,6 +1,7 @@
 import React from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import Typewriter from "typewriter-effect";
 
 function Encounter1() {
     return (
@@ -10,6 +11,28 @@ function Encounter1() {
             </div>
             <div>
                 <img className="encounter-image" src={enemy} />
+            </div>
+            <div className="text-holder">
+
+                <div className="story-text">
+                    <Typewriter
+
+                        onInit={(typewriter) => {
+
+                            typewriter
+
+                                .changeDelay(50)
+                                .typeString("You walk down the forest and see some guys chillin.")
+                                .pauseFor(1000)
+                                .typeString("They look at you with disdain and you dont know what to do.")
+                                .pauseFor(1000)
+                                .typeString("You think to walk away but reassess the situation and you believe that you will be able to conquer these nerds.")
+                                .pauseFor(1000)
+                                .typeString("You could: enter combat, try to reason with them, or walk away unnoticed. What would you like to do?")
+                                .start();
+                        }}
+                    />
+                </div>
             </div>
             <div className="choice-button">
                 <button class="btn-secondary btn-lg"> Option 1 </button>
