@@ -80,3 +80,17 @@ margin-right: 40px;
   width: 800px;
   padding-bottom: 30px;
 }
+
+.acc-title{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.input-form{
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
