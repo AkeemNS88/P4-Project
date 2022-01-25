@@ -1,5 +1,5 @@
 import React from "react";
-import portal from "/home/abeab/Development/code/P4/P4-Project/client/src/Images/p2.gif"
+import portal from "/home/abeab/Development/code/P4/P4-Project/client/src/Components/Images/p2.gif"
 
 function Welcome() {
 
