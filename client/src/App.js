@@ -1,23 +1,18 @@
-import portal from './Images/p2.gif'
 import Welcome from './Components/Welcome';
-// import button from 'react-bootstrap/Button';
+import Encounter1 from './Components/Encounter1';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+
 
 function App() {
   return (
-    <div>
-      <div className="welcome">
-        <Welcome />
+    <Router>
+      <Routes>
+        <Route path="/" element={<Welcome />} />
+        <Route path="/encounter1" element={<Encounter1 />} />
 
-      </div>
-      <div>
-        <img className='portal' src={portal} />
-
-      </div>
-      <div className='enter-button'>
-      <button type="button" class="btn btn-dark btn-lg">Enter If You Dare</button>
-      </div>
-    </div>
+      </Routes>
+    </Router>
   );
 }
 
