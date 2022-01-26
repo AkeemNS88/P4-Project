@@ -2,19 +2,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import Typewriter from "typewriter-effect";
-
+import { useNavigate } from "react-router-dom";
 
 function Mage() {
-    const [fighter, setFighter] = useState("")
+    let navigate = useNavigate();
 
-    function getMaster() {
-        fetch(`masters/2`)
-            .then(r => r.json())
-            .then(data => setFighter(data.name)
-            )
+    function handleClick(e){
+        e.preventDefault()
+        navigate("/mage-encounter")
     }
-    useEffect(getMaster, [])
-    console.log(fighter)
 
     return (
         <div>
@@ -26,7 +22,7 @@ function Mage() {
                 <div className="char-text">
             <Typewriter
 
-onInit={(typewriter) => {
+    onInit={(typewriter) => {
 
     typewriter
 
@@ -44,7 +40,7 @@ onInit={(typewriter) => {
             </div>
             </div>
             <div className="enter-button">
-                <button type="button" class="btn btn-dark btn-lg">Begin Adventure</button>
+                <button onClick={handleClick} type="button" class="btn btn-dark btn-lg">Begin Adventure</button>
             </div>
         </div>
     )

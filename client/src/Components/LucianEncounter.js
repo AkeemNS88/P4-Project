@@ -2,17 +2,46 @@ import React from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
+import lucian from "./Images/lucian.png"
+import { useState } from "react";
 
-function Encounter1() {
+function LucianEncounter() {
+    const [health, setHealth] = useState(0)
+
     //get request to all masters? 
-
     function damage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
+        //patch request to update health/energy accordingly
+
     }
 
-    function showDamage() {
-        alert(`You hit for ${damage()} damage`)
+    // function patchReq() {
+    //     fetch('/masters/4'), {
+    //         method: "PATCH",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             health: setHealth((health - damage()))
+    //         }),
+    //     }
+    //         .then(r => r.json())
+    //         .then(health => console.log(health))
+            
+    //     // {alert(`You hit for ${damage()} damage`)}
+    // }
+
+
+
+
+    function showTalk() {
+        alert(`It's too late for you! HOWOWWWWWWWWWWWWWWW`)
     }
+
+    // function showFlee() {
+    //     //render function here that will take player to another route
+    //     //bring back lucian in their storyline to fight with no escape.
+    // }
 
     return (
         <div>
@@ -20,7 +49,7 @@ function Encounter1() {
                 <h1 className="encounter-title">Encounter 1</h1>
             </div>
             <div>
-                <img className="encounter-image" src={enemy} />
+                <img className="encounter-image" src={lucian} />
             </div>
             <div className="text-holder">
 
@@ -42,12 +71,12 @@ function Encounter1() {
                 </div>
             </div>
             <div className="choice-button">
-                <button onClick={showDamage} class="btn-secondary btn-lg"> Option 1 </button>
-                <button class="btn-secondary btn-lg"> Option 2 </button>
-                <button class="btn-secondary btn-lg"> Option 3 </button>
+                {/* <button onClick={patchReq} class="btn-secondary btn-lg"> Attack </button> */}
+                <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
+                <button class="btn-secondary btn-lg"> Flee </button>
             </div>
         </div>
     )
 }
 
-export default Encounter1
+export default LucianEncounter

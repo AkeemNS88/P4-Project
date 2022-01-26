@@ -10,14 +10,14 @@ class MastersController < ApplicationController
     end
     
     def update
-        status = find_status
-        status.update(status_params)
-        render json: status
+        stats = find_master
+        stats.update!(stats_params)
+        render json: stats
     end
 
     private
     
-    def status_params
+    def stats_params
         params.permit(:health, :wealth, :energy)
     end
     

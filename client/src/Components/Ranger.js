@@ -2,18 +2,15 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import enemy from "./Encounters/set1-1.jpg"
+import { useNavigate } from "react-router-dom";
 
 function Ranger() {
-    const [fighter, setFighter] = useState("")
+    let navigate = useNavigate();
 
-    function getMaster() {
-        fetch(`masters/3`)
-            .then(r => r.json())
-            .then(data => setFighter(data.name)
-            )
+    function handleClick(e){
+        e.preventDefault()
+        navigate("/ranger-encounter")
     }
-    useEffect(getMaster, [])
-    console.log(fighter)
 
     return (
         <div>
@@ -43,7 +40,7 @@ function Ranger() {
                 />
             </div>
             <div className="enter-button">
-                <button type="button" class="btn btn-dark btn-lg">Begin Adventure</button>
+                <button onClick={handleClick}  type="button" class="btn btn-dark btn-lg">Begin Adventure</button>
             </div>
         </div>
     )
