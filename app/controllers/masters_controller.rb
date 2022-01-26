@@ -11,6 +11,9 @@ class MastersController < ApplicationController
 
 
     private
+    def record_not_found
+        render json: {error: "Master not found"}, status: 404
+    end
 
     def find_master
         Master.find(params[:id])
