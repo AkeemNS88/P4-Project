@@ -1,6 +1,7 @@
 body {
-  background-image: url(/home/abeab/Development/code/P4/P4-Project/client/src/Components/Images/papyrus.jpg);
+  background-image: url(https://i.ibb.co/bHdR5N9/papyrus.jpg);
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -159,4 +160,8 @@ margin-left: auto;
  margin-right: auto;
   width: 400px;
   margin-top: 20px;
+}
+
+.hide {
+  display:none
 }

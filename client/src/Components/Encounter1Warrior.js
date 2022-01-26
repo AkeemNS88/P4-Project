@@ -1,30 +1,40 @@
 import React from "react";
-import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
 import intro from "./Encounters/beginning.jpg"
 import { useNavigate } from "react-router-dom";
+import LucianEncounter from "./LucianEncounter";
+import { useState, useEffect } from "react";
 
 function Encounter1Warrior() {
+    const [fighter, setFighter] = useState({})
     //get request to all masters? 
     //review p3 for dynamically showing stuff
-
-
-    let navigate = useNavigate()
+  let navigate = useNavigate()
 
     function handleClick(e){
         e.preventDefault()
         navigate("/lucian")
     }
-
-    function damage() {
-        return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
-    }
-
-    function showDamage() {
-        alert(`You hit for ${damage()} damage`)
-    }
-
+    
+    function getMaster() {
+        fetch(`masters/1`)
+            .then(r => r.json())
+            .then(data => setFighter(data)
+            )
+        }
+        useEffect(getMaster, [])
+        
+      
+        let heroStats = {
+            id: fighter.id,
+            name: fighter.name,
+            health: fighter.health,
+            wealth: fighter.wealth,
+            energy: fighter.energy
+        }
+        console.log(heroStats)
+        
     return (
         <div>
             <div>
@@ -63,6 +73,9 @@ function Encounter1Warrior() {
             </div>
             <div className="choice-button">
                 <button onClick={handleClick} class="btn-secondary btn-lg"> Continue </button>
+            </div>
+            <div className="hide">
+
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 import React from "react";
-import portal from "/home/abeab/Development/code/P4/P4-Project/client/src/Components/Images/p2.gif"
+import portal from "./Images/p2.gif"
 import { useNavigate } from 'react-router-dom'
 
 function Welcome() {

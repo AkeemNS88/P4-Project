@@ -13,6 +13,41 @@ import ChooseFighter from './Components/ChooseFighter';
 
 function App() {
 
+//pass down state of masters here into lucianecounter, etc
+//make callback function to reference the get/patch request here ?
+//figure out encounter counter for user, to track and save as highscore
+
+//get rid of skill table. we will handle skills on front end. diff functions for diff buttons
+
+//user table should have
+//username
+//password_digest
+//encounter counter?
+//... etc?
+
+//encounter table 
+//encounter name? ex. Lucian, Lich King, Crossroads.. etc
+//this might be how we can keep track of # of encounters ^^^^^^
+//when new encounter is created add 1 to user encounter counter
+
+//master table
+//connect a user to a master...?
+//
+
+                  //IMPORTANT!!!!!!!!!!!!!!!!!!! HERE!!!!!!!!!!!!!!!!!!!!!!!
+                  //encounter belongs to master, belongs to user
+                  //user has_many encounters
+                  //master has_many encounters
+
+
+//front end --> make a visible representation of # of encounters in top corner
+//so you can track progress
+//handle skills and functions for that on the front end. in state.
+//maybe make a health bar ???? that would be cool lol
+// or instead make the number visible and trackable like the encounters number^
+//make high score page
+//make death page or alert or something "try again" button idk
+//make a user page where people can see their account. Delete it, Update (change name)...
 
   return (
     <Router>

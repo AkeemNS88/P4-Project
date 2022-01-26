@@ -5,9 +5,12 @@ import Typewriter from "typewriter-effect";
 import lucian from "./Images/lucian.png"
 import { useState, useEffect } from "react";
 
-function LucianEncounter() {
+function LucianEncounter({heroStats}) {
+
+
     const [lucianHealth, setLucianHealth] = useState(100)
-    const [heroHealth, setHeroHealth] = useState(100)
+    const [heroHealth, setHeroHealth] = useState(heroStats)
+    console.log(heroHealth)
 
     function lucianDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
@@ -21,8 +24,6 @@ function LucianEncounter() {
     let lucianRoll = lucianDamage()
 
     const updateHealth = () => {
-
-
 
         //attacking lucian lower his health
         fetch(`/masters/4`, {
@@ -47,7 +48,7 @@ function LucianEncounter() {
 
 
             //getting attacked by lucian lowering your health
-            fetch(`/masters/1`, {
+            fetch(`/masters/${heroStats.id}`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,13 +100,15 @@ function LucianEncounter() {
                         onInit={(typewriter) => {
                             typewriter
                                 .changeDelay(50)
-                                .typeString("You walk down the forest and see some guys chillin.")
+                                .typeString("You see your arch nemesis Lucian. ")
                                 .pauseFor(1000)
-                                .typeString("They look at you with disdain and you dont know what to do.")
+                                .typeString("He smells so bad. ")
                                 .pauseFor(1000)
-                                .typeString("You think to walk away but reassess the situation and you believe that you will be able to conquer these nerds.")
+                                .typeString("Real bad. Like wet dog bad..")
                                 .pauseFor(1000)
-                                .typeString("You could: enter combat, try to reason with them, or walk away unnoticed. What would you like to do?")
+                                .typeString("He insulted your mother. ")
+                                .pauseFor(1000)
+                                .typeString("What do you do? ")
                                 .start();
                         }}
                     />
