@@ -8,9 +8,19 @@ class MastersController < ApplicationController
         master = find_master
         render json: master
     end
-
+    
+    def update
+        status = find_status
+        status.update(status_params)
+        render json: status
+    end
 
     private
+    
+    def status_params
+        params.permit(:health, :wealth, :energy)
+    end
+    
     def record_not_found
         render json: {error: "Master not found"}, status: 404
     end
