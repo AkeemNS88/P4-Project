@@ -3,36 +3,61 @@ import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
 import lucian from "./Images/lucian.png"
-import { useState } from "react";
+import { useState, useEffect} from "react";
 
 function LucianEncounter() {
-    const [health, setHealth] = useState(0)
+    const [health, setHealth] = useState(100)
+    const [heroHealth, setHeroHealth] = useState(100)
+
 
     //get request to all masters? 
-    function damage() {
+    function lucianDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
         //patch request to update health/energy accordingly
-
     }
 
-    // function patchReq() {
-    //     fetch('/masters/4'), {
-    //         method: "PATCH",
-    //         headers: {
-    //             "Content-Type": "application/json",
-    //         },
-    //         body: JSON.stringify({
-    //             health: setHealth((health - damage()))
-    //         }),
-    //     }
-    //         .then(r => r.json())
-    //         .then(health => console.log(health))
-            
-    //     // {alert(`You hit for ${damage()} damage`)}
-    // }
+    function heroDamage() {
+        return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
+        //patch request to update health/energy accordingly
+    }
+    let heroRoll = heroDamage()
+    let lucianRoll = lucianDamage()
 
+    const updateHealth = () => {
 
+        //attacking lucian
+        fetch(`/masters/4`, {
 
+          method: 'PATCH',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            health: (health) - heroRoll
+          }),
+        })
+          .then((res) => res.json())
+          .then((result) => setHealth(result))
+        
+          {alert(`You hit for ${heroRoll} damage`)}
+
+                  fetch(`/masters/1`, {
+                      method: 'PATCH',
+                      headers: {
+                        'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify({
+                        health: (heroHealth) - lucianRoll
+                      }),
+                    })
+                      .then((res) => res.json())
+                      .then((result) => setHeroHealth(result))
+                    
+            {alert(`You got hit for ${lucianRoll} damage`)}
+
+      }
+
+      console.log(health)
 
     function showTalk() {
         alert(`It's too late for you! HOWOWWWWWWWWWWWWWWW`)
@@ -71,7 +96,7 @@ function LucianEncounter() {
                 </div>
             </div>
             <div className="choice-button">
-                {/* <button onClick={patchReq} class="btn-secondary btn-lg"> Attack </button> */}
+                <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 <button class="btn-secondary btn-lg"> Flee </button>
             </div>
