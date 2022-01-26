@@ -14,7 +14,6 @@ function Warrior() {
         navigate("/warrior-encounter")
     }
 
-
     function getMaster() {
         fetch(`masters/1`)
             .then(r => r.json())
