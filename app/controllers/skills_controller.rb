@@ -11,7 +11,7 @@ class SkillsController < ApplicationController
 
     def update
         skill = find_skill
-        skill.update(skill_params)
+        skill.update!(skill_params)
         render json: skill
     end
 

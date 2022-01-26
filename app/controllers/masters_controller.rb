@@ -28,4 +28,5 @@ class MastersController < ApplicationController
     def find_master
         Master.find(params[:id])
     end
+
 end
