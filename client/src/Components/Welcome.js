@@ -1,10 +1,14 @@
 import React from "react";
 import portal from "/home/abeab/Development/code/P4/P4-Project/client/src/Components/Images/p2.gif"
+import { useNavigate } from 'react-router-dom'
 
 function Welcome() {
+    let navigate = useNavigate();
 
-
-
+    function handleClick(e){
+        e.preventDefault()
+        navigate("/choosefighter")
+    }
 
     return (
         <div>
@@ -26,7 +30,7 @@ function Welcome() {
                 </form>
             </div>
             <div className='enter-button'>
-                <button type="button" class="btn btn-dark btn-lg">Enter If You Dare</button>
+                <button onClick={handleClick}type="button" class="btn btn-dark btn-lg">Enter If You Dare</button>
             </div>
         </div>
     )
