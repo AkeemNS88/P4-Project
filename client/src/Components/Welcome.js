@@ -6,8 +6,7 @@ function Welcome() {
     // const [formData, setFormData] = useState({
     //     username: "",
     //     password: "",
-    //     email: "",
-    // });
+    //     });
     
     // const handleChange = (e) => {
     //     setFormData({
