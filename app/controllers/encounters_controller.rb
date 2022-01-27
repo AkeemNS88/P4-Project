@@ -17,7 +17,7 @@ class EncountersController < ApplicationController
 
     private
 
-    def encoEncounter_params
+    def encounter_params
         params.permit(:name)
     end
 

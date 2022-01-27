@@ -1,5 +1,5 @@
 class Master < ApplicationRecord
     has_many :encounters
-    belongs_to :user
+    has_many :users, through: :encounters
 
 end

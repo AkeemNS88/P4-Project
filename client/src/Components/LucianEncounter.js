@@ -26,7 +26,7 @@ function LucianEncounter({heroStats}) {
     const updateHealth = () => {
 
         //attacking lucian lower his health
-        fetch(`/masters/4`, {
+        fetch(`/masters/2`, {
 
             method: 'PATCH',
             headers: {
@@ -48,7 +48,7 @@ function LucianEncounter({heroStats}) {
 
 
             //getting attacked by lucian lowering your health
-            fetch(`/masters/${heroStats.id}`, {
+            fetch(`/masters/1`, {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json',

@@ -5,8 +5,6 @@ class CreateMasters < ActiveRecord::Migration[7.0]
       t.integer :health
       t.integer :wealth
       t.integer :energy
-      t.integer :user_id
-      
 
       t.timestamps
     end

@@ -5,6 +5,7 @@ class CreateEncounters < ActiveRecord::Migration[7.0]
       t.integer :encounter_number
       t.integer :master_id
       t.integer :user_id
+
       
       t.timestamps
     end
