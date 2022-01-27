@@ -12,7 +12,15 @@ golem = Master.create(name: "Giant Stone Golem", health: 200, wealth: 150, energ
 banshee = Master.create(name: "Banshee Queen", health: 125, wealth: 125, energy: 250, user_id: user_two.id)
 
 
-# puts "Seeding Skills"
+puts "Seeding Encounters"
+intro =  Encounter.create(name: "Begin", encounter_number: 1, master_id: warrior.id, user_id: user_one.id)
+lucian =  Encounter.create(name: "Lucian", encounter_number: 2, master_id: warrior.id, user_id: user_one.id)
+lich =  Encounter.create(name: "Lich King", encounter_number: 3, master_id: warrior.id, user_id: user_one.id)
+golem =  Encounter.create(name: "Golem", encounter_number: 4, master_id: warrior.id, user_id: user_one.id)
+banshee =  Encounter.create(name: "Banshee", encounter_number: 5, master_id: warrior.id, user_id: user_one.id)
+
+
+
 # slash = Skill.create(name: "Slash", master_id: warrior.id )
 # bash = Skill.create(name: "Bash", master_id: warrior.id )
 # fireball = Skill.create(name: "Fireball", master_id: mage.id)
@@ -24,6 +32,5 @@ banshee = Master.create(name: "Banshee Queen", health: 125, wealth: 125, energy:
 # enemy_skill_three = Skill.create(name: "Upheaval", master_id: golem.id)
 # enemy_skill_four = Skill.create(name: "Chaos Ray", master_id: banshee.id)
 
-encounter_one_warrior = Encounter.create(name: "Lucian", encounter_number: 1, master_id: warrior.id, user_id: user_one.id)
 
 

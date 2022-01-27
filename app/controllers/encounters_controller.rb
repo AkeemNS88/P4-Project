@@ -1,5 +1,9 @@
 class EncountersController < ApplicationController
 
+    def index
+        render json: Encounter.all
+    end
+
     def show
         encounter = find_encounter
         render json: encounter

@@ -16,6 +16,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
   console.log(currentUser);
+
   useEffect(() => {
     fetch("/me", {
       credentials: "include",
@@ -34,30 +35,6 @@ function App() {
   if (!authenticated) {
     return <div></div>;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //pass down state of masters here into lucianecounter, etc
@@ -111,7 +88,6 @@ function App() {
         <Route path="/mage" element={<Mage />} />
         <Route path="/ranger" element={<Ranger />} />
         <Route path= "/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
-
       </Routes>
     </Router>
   );

@@ -47,11 +47,7 @@ function Welcome({ currentUser, setCurrentUser }) {
 
     let navigate = useNavigate();
 
-    function handleClick(e) {
-        e.preventDefault()
-        navigate("/choosefighter")
-    }
-
+   
     return (
         <div>
             <div className="welcome">
