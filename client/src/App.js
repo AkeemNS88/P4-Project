@@ -9,9 +9,55 @@ import Ranger from './Components/Ranger'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ChooseFighter from './Components/ChooseFighter';
-
+import { useState, useEffect } from "react";
 
 function App() {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [authenticated, setAuthenticated] = useState(false);
+  console.log(currentUser);
+  useEffect(() => {
+    fetch("/me", {
+      credentials: "include",
+    }).then((res) => {
+      if (res.ok) {
+        res.json().then((user) => {
+          setCurrentUser(user);
+          setAuthenticated(true);
+        });
+      } else {
+        setAuthenticated(true);
+      }
+    });
+  }, []);
+
+  if (!authenticated) {
+    return <div></div>;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //pass down state of masters here into lucianecounter, etc
 //make callback function to reference the get/patch request here ?
@@ -54,7 +100,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Welcome />} />
+        <Route path="/" element={<Welcome currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
         <Route path="/choosefighter" element={<ChooseFighter />} />
         <Route path="/warrior-encounter" element={<Encounter1Warrior />} />
         <Route path="/ranger-encounter" element={<Encounter1Ranger />} />

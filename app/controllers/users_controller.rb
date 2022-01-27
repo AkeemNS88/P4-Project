@@ -1,16 +1,20 @@
 class UsersController < ApplicationController
-    wrap_parameters format: []
-    
+    #what is this v ???????????
+    # wrap_parameters format: []
+    skip_before_action :authenticate_user, only: [:create, :show]
+
     def index 
         users = User.all 
-        render json: users, each_serializer: UserSerializer
+        render json: users
+        # render json: users, each_serializer: UserSerializer
+
     end
 
     def show 
         if current_user
             render json: current_user, status: :ok
         else 
-            render json: "Not authenticated", status: :unauthorized
+            render json: "Not logged in", status: :unauthorized
         end 
     end
 
@@ -20,7 +24,7 @@ class UsersController < ApplicationController
             session[:user_id] = user.id
             render json: user, status: :created 
         else 
-            render json: user.errors.full_messages, status: :unprocessable_entity 
+            render json: user.errors.full_messages, status: :unprocessable_entity
         end 
     end
 
@@ -38,7 +42,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.permit(:username, :password, :password_confirmation)
+        params.permit(:username, :password)
     end
 end
 

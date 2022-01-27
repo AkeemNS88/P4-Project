@@ -4,5 +4,5 @@ class User < ApplicationRecord
     has_many :masters
     has_many :encounters
 
-    validates: username, presence: true, uniqueness: true
+    validates :username, presence: true, uniqueness: true
 end

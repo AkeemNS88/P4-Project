@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :show, :create, :destroy] 
+  resources :users, only: [:index, :create, :destroy] 
   resources :masters, only: [:index, :show, :update]
   resources :encounters, only: [:show, :update]
 
