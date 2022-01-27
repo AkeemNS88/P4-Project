@@ -12,16 +12,18 @@ golem = Master.create(name: "Giant Stone Golem", health: 200, wealth: 150, energ
 banshee = Master.create(name: "Banshee Queen", health: 125, wealth: 125, energy: 250, user_id: user_two.id)
 
 
-puts "Seeding Skills"
-slash = Skill.create(name: "Slash", master_id: warrior.id )
-bash = Skill.create(name: "Bash", master_id: warrior.id )
-fireball = Skill.create(name: "Fireball", master_id: mage.id)
-frostbolt = Skill.create(name: "Frostbolt", master_id: mage.id)
-focus_shot= Skill.create(name: "Focus Shot", master_id: ranger.id)
-aim_shot = Skill.create(name: "Aimed Shot", master_id: ranger.id)
-enemy_skill_one = Skill.create(name: "Bite", master_id: lucian.id)
-enemy_skill_two = Skill.create(name: "Touch of Death", master_id: lich_king.id)
-enemy_skill_three = Skill.create(name: "Upheaval", master_id: golem.id)
-enemy_skill_four = Skill.create(name: "Chaos Ray", master_id: banshee.id)
+# puts "Seeding Skills"
+# slash = Skill.create(name: "Slash", master_id: warrior.id )
+# bash = Skill.create(name: "Bash", master_id: warrior.id )
+# fireball = Skill.create(name: "Fireball", master_id: mage.id)
+# frostbolt = Skill.create(name: "Frostbolt", master_id: mage.id)
+# focus_shot= Skill.create(name: "Focus Shot", master_id: ranger.id)
+# aim_shot = Skill.create(name: "Aimed Shot", master_id: ranger.id)
+# enemy_skill_one = Skill.create(name: "Bite", master_id: lucian.id)
+# enemy_skill_two = Skill.create(name: "Touch of Death", master_id: lich_king.id)
+# enemy_skill_three = Skill.create(name: "Upheaval", master_id: golem.id)
+# enemy_skill_four = Skill.create(name: "Chaos Ray", master_id: banshee.id)
+
+encounter_one_warrior = Encounter.create(name: "Lucian", encounter_number: 1, master_id: warrior.id, user_id: user_one.id)
 
 

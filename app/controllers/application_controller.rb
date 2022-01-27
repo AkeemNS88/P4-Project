@@ -4,6 +4,9 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_record
 
+    # helper_method :current_user
+    # helper_method :logged_in?
+
     # session[:encounter_number] ||= 0
     # session[:encounter_number] += 1
 # Possible solution to tracking encounter number
@@ -11,6 +14,10 @@ class ApplicationController < ActionController::API
 
     def current_user
         User.find_by_id(session[:user_id])
+    end
+
+    def logged_in?
+        !current_user.nil?
     end
 
     def invalid_record(exception)

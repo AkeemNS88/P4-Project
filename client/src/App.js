@@ -10,6 +10,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ChooseFighter from './Components/ChooseFighter';
 import { useState, useEffect } from "react";
+import LoginForm from './Components/LoginForm';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -106,9 +107,10 @@ function App() {
         <Route path="/ranger-encounter" element={<Encounter1Ranger />} />
         <Route path="/mage-encounter" element={<Encounter1Mage />} />
         <Route path="/lucian" element={<LucianEncounter />} />
-         <Route path="/warrior" element={<Warrior />} />
+        <Route path="/warrior" element={<Warrior />} />
         <Route path="/mage" element={<Mage />} />
         <Route path="/ranger" element={<Ranger />} />
+        <Route path= "/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
 
       </Routes>
     </Router>

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import portal from "./Images/p2.gif"
 import { useNavigate } from 'react-router-dom'
+import LoginForm from "./LoginForm"
 
 function Welcome({ currentUser, setCurrentUser }) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
     });
-
+    
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -61,6 +62,7 @@ function Welcome({ currentUser, setCurrentUser }) {
             </div>
             <div>
                 <h3 className="acc-title">Make An Account</h3>
+                
                 <form onSubmit={handleSubmit} className="input-form">
                     <label><strong>Username: </strong>
                         <input
@@ -84,6 +86,7 @@ function Welcome({ currentUser, setCurrentUser }) {
                         <button type="submit" class="btn btn-dark btn-lg">Enter If You Dare</button>
                     </div>
                 </form>
+                <div> <LoginForm /> </div>
             </div>
         </div>
     )
