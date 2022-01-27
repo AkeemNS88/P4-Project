@@ -15,7 +15,9 @@ function App() {
 
 //pass down state of masters here into lucianecounter, etc
 //make callback function to reference the get/patch request here ?
-//figure out encounter counter for user, to track and save as highscore
+
+//figure out encounter counter for user, to track and save as highscore     
+// ***---maybe solved using cookies test code in sessions controller---*** have an idea
 
 //get rid of skill table. we will handle skills on front end. diff functions for diff buttons
 

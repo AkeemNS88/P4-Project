@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :users, only: [:index, :show, :create, :destroy] 
   resources :masters, only: [:index, :show, :update]
-  resources :skills, only: [:index, :show, :update]
+  resources :encounters, only: [:show, :update]
 
   get '/me', to: "users#show"
 

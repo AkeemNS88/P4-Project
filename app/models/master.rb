@@ -1,5 +1,5 @@
 class Master < ApplicationRecord
-    has_many :skills
+    has_many :encounters
     belongs_to :user
 
 end
