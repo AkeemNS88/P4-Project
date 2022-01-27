@@ -6,6 +6,10 @@ class ApplicationController < ActionController::API
 
     private
 
+    def current_user
+        User.find_by_id(session[:user_id])
+    end
+
     def invalid_record(exception)
         render json: {errors: exception.record.errors.full_messages}, status: 422
     end
