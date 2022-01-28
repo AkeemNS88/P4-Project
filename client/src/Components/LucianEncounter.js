@@ -4,6 +4,8 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
 import lucian_image from "./Images/lucian.png"
 import { useState, useEffect } from "react";
+import { useNavigate } from 'react-router-dom'
+
 
 function LucianEncounter() {
     const [lucianHealth, setLucianHealth] = useState(100)
@@ -17,6 +19,9 @@ function LucianEncounter() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 30)
     }
 
+    let navigate = useNavigate();
+
+
     let heroRoll = heroDamage()
     let lucianRoll = lucianDamage()
 
@@ -29,76 +34,57 @@ function LucianEncounter() {
 
         if (lucianHealth > 0) {
              { alert(`You hit for ${heroRoll} damage`) }
-        } else if (lucianHealth < 1) {
+
+        } else if (heroRoll > lucianHealth) {
             alert("You defeated Lucian!")
+            fetch("/encounters", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify ({
+                    name: "Woods",
+                    user_id: 4,
+                 })   
+                })
+            navigate("/woods")
+            (heroHealth = heroHealth)
+        }  
+        else if (lucianHealth < 1) {
+            alert("You defeated Lucian!")
+            fetch("/encounters", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify ({
+                    name: "Woods",
+                    user_id: 4,
+                 })   
+                })
+            navigate("/woods")
+            (heroHealth = heroHealth)
         }
 
-    
-        if (heroHealth.health > 0){                
+        if (heroHealth > 0){                
             alert(`You got hit for ${lucianRoll} damage`) 
            } else if (heroHealth < 1) {
-               alert("u suck")
+               alert("You died")
+               navigate("/choosefighter")
            }
         }
-
-      
-    //     //         health: (lucianHealth.health) - heroRoll
-    //     //     }),
-    //     // })
-    //     //     .then((res) => res.json())
-    //     //     .then((result) => setLucianHealth(result))
-
-    //     // if (lucianHealth.health >= 0) {
-
-    //     //     { alert(`You hit for ${heroRoll} damage`) }
-    //     // } else if (lucianHealth.health < 1 ){
-    //     //     alert("You defeated Lucian!")
-    //     //     fetch(`/masters/1`, {
-    //     //         method: 'PATCH',
-    //     //         headers: {
-    //     //             'Content-Type': 'application/json',
-    //     //         },
-    //     //         body: JSON.stringify({
-    //     //             health: 100
-    //     //         }),
-    //     //     })
-    //     // }
-
-
-    //         //getting attacked by lucian lowering your health
-    //         fetch(`/masters/1`, {
-    //             method: 'PATCH',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             body: JSON.stringify({
-    //                 health: (heroHealth.health) - lucianRoll
-    //             }),
-    //         })
-    //             .then((res) => res.json())
-    //             .then((result) => setHeroHealth(result))
-
-    //             if (heroHealth.health >= 0){                
-    //              alert(`You got hit for ${lucianRoll} damage`) 
-    //             } else  if (heroHealth.health < 1) {
-    //                 alert("u suck")
-    //             }
-    // }
-
-    // console.log("Lucian's health is:" + lucianHealth.health)
-    // console.log("Your health is:" + heroHealth.health)
-
-    if (lucianHealth <= 0) {
-        
-    }
-
-
-
 
 
 
     function showTalk() {
-        alert(`It's too late for you! HOWOWWWWWWWWWWWWWWW`)
+        alert(`It's too late for you! HOWOWWWWWWWWWWWWWWWL`)
+        let damageH = (heroHealth) - (lucianRoll)
+        setHeroHealth(damageH)
+        alert(`You got hit for ${lucianRoll} damage`)
+        if (heroHealth < 1) {
+            alert("You Died")
+            navigate("/choosefighter")
+    }
     }
 
     // function showFlee() {
@@ -109,7 +95,7 @@ function LucianEncounter() {
     return (
         <div>
             <div>
-                <h1 className="encounter-title">Encounter 1</h1>
+                <h1 className="encounter-title">Battle With Lucian</h1>
             </div>
             <div>
                 <img className="encounter-image" src={lucian_image} />
@@ -136,7 +122,7 @@ function LucianEncounter() {
                 </div>
             </div>
             <div className="choice-button">
-                <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
+            <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 <button class="btn-secondary btn-lg"> Flee </button>
             </div>
@@ -147,6 +133,7 @@ function LucianEncounter() {
             <h3>Lucian's Health: {lucianHealth}</h3>
 
             </div>
+    
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import React from "react";
+import Typewriter from "typewriter-effect";
 
-function Encounter4() {
+function WoodsLeft() {
     return(
         <div>
         <div>
@@ -20,4 +21,4 @@ function Encounter4() {
     )
 }
 
-export default Encounter4
+export default WoodsLeft

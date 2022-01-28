@@ -1,8 +1,9 @@
 import Welcome from './Components/Welcome';
 import Encounter1Warrior from './Components/Encounter1Warrior';
-import Encounter1Mage from './Components/Encounter1Mage';
-import Encounter1Ranger from './Components/Encounter1Ranger';
 import LucianEncounter from './Components/LucianEncounter';
+import Woods from './Components/Woods';
+import WoodsLeft from './Components/WoodsLeft';
+import WoodsRight from './Components/WoodsRight';
 import Warrior from './Components/Warrior'
 import Mage from './Components/Mage';
 import Ranger from './Components/Ranger'
@@ -118,10 +119,11 @@ function App() {
         <Route path="/" element={<Welcome currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
         <Route path="/choosefighter" element={<ChooseFighter />} />
         <Route path="/warrior-encounter" element={<Encounter1Warrior />} />
-        <Route path="/ranger-encounter" element={<Encounter1Ranger />} />
-        <Route path="/mage-encounter" element={<Encounter1Mage />} />
-        <Route path="/lucian" element={<LucianEncounter />} />
-        <Route path="/warrior" element={<Warrior />} />
+        <Route path="/lucian" element={<LucianEncounter currentUser={currentUser} />} />
+        <Route path="/woods" element={<Woods />} />
+        <Route path="/woodsleft" element={<WoodsLeft />} />
+        <Route path="/woodsright" element={<WoodsRight />} />
+        <Route path="/warrior" element={<Warrior currentUser={currentUser} />} />
         <Route path="/mage" element={<Mage />} />
         <Route path="/ranger" element={<Ranger />} />
         <Route path= "/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />

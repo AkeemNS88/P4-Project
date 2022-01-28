@@ -5,7 +5,7 @@ import enemy from "./Encounters/set1-1.jpg"
 import { useNavigate } from 'react-router-dom'
 
 
-function Warrior() {
+function Warrior({currentUser}) {
 
     let navigate = useNavigate();
     
@@ -18,14 +18,13 @@ function Warrior() {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify ({
-                name: "Lucian Battle",
-                user_id: 4,
+                name: "Luciannnnnnnnnnnnnnn",
+                user_id: currentUser.user_id,
              })   
             })
             navigate("/warrior-encounter")
     }
 
-    
 
     return (
         <div>
