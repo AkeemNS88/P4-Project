@@ -4,6 +4,7 @@ import LucianEncounter from './Components/LucianEncounter';
 import Woods from './Components/Woods';
 import WoodsLeft from './Components/WoodsLeft';
 import WoodsRight from './Components/WoodsRight';
+import LichKing from './Components/LichKing';
 import Warrior from './Components/Warrior'
 import Mage from './Components/Mage';
 import Ranger from './Components/Ranger'
@@ -57,6 +58,7 @@ function App() {
         <Route path="/lucian" element={<LucianEncounter />} />
         <Route path="/woods" element={<Woods />} />
         <Route path="/woodsleft" element={<WoodsLeft />} />
+        <Route path="/lichking" element={<LichKing />} />
         <Route path="/woodsright" element={<WoodsRight />} />
         <Route path="/warrior" element={<Warrior />} />
         <Route path="/mage" element={<Mage />} />
