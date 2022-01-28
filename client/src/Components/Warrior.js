@@ -23,7 +23,6 @@ function Warrior() {
              })   
             })
             navigate("/warrior-encounter")
-
     }
 
     

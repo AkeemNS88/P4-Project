@@ -5,9 +5,9 @@ import Typewriter from "typewriter-effect";
 import lucian_image from "./Images/lucian.png"
 import { useState, useEffect } from "react";
 
-function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
-    const [lucianHealth, setLucianHealth] = useState(lucian)
-    const [heroHealth, setHeroHealth] = useState(fighter)
+function LucianEncounter() {
+    const [lucianHealth, setLucianHealth] = useState(100)
+    const [heroHealth, setHeroHealth] = useState(100)
 
     function lucianDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 11)
@@ -21,61 +21,76 @@ function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
     let lucianRoll = lucianDamage()
 
     const updateHealth = () => {
-
         //attacking lucian lower his health
-        fetch(`/masters/2`, {
+        let damageL = (lucianHealth) - (heroRoll)
+        setLucianHealth(damageL)
+        let damageH = (heroHealth) - (lucianRoll)
+        setHeroHealth(damageH)
 
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                health: (lucianHealth.health) - heroRoll
-            }),
-        })
-            .then((res) => res.json())
-            .then((result) => setLucianHealth(result))
-
-        if (lucianHealth.health >= 0) {
-
-            { alert(`You hit for ${heroRoll} damage`) }
-        } else if (lucianHealth.health < 1 ){
+        if (lucianHealth > 0) {
+             { alert(`You hit for ${heroRoll} damage`) }
+        } else if (lucianHealth < 1) {
             alert("You defeated Lucian!")
-            fetch(`/masters/1`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    health: 100
-                }),
-            })
         }
 
+    
+        if (heroHealth.health > 0){                
+            alert(`You got hit for ${lucianRoll} damage`) 
+           } else if (heroHealth < 1) {
+               alert("u suck")
+           }
+        }
 
-            //getting attacked by lucian lowering your health
-            fetch(`/masters/1`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    health: (heroHealth.health) - lucianRoll
-                }),
-            })
-                .then((res) => res.json())
-                .then((result) => setHeroHealth(result))
+      
+    //     //         health: (lucianHealth.health) - heroRoll
+    //     //     }),
+    //     // })
+    //     //     .then((res) => res.json())
+    //     //     .then((result) => setLucianHealth(result))
 
-                if (heroHealth.health >= 0){                
-                 alert(`You got hit for ${lucianRoll} damage`) 
-                } else  if (heroHealth.health < 1) {
-                    alert("u suck")
-                }
+    //     // if (lucianHealth.health >= 0) {
+
+    //     //     { alert(`You hit for ${heroRoll} damage`) }
+    //     // } else if (lucianHealth.health < 1 ){
+    //     //     alert("You defeated Lucian!")
+    //     //     fetch(`/masters/1`, {
+    //     //         method: 'PATCH',
+    //     //         headers: {
+    //     //             'Content-Type': 'application/json',
+    //     //         },
+    //     //         body: JSON.stringify({
+    //     //             health: 100
+    //     //         }),
+    //     //     })
+    //     // }
+
+
+    //         //getting attacked by lucian lowering your health
+    //         fetch(`/masters/1`, {
+    //             method: 'PATCH',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 health: (heroHealth.health) - lucianRoll
+    //             }),
+    //         })
+    //             .then((res) => res.json())
+    //             .then((result) => setHeroHealth(result))
+
+    //             if (heroHealth.health >= 0){                
+    //              alert(`You got hit for ${lucianRoll} damage`) 
+    //             } else  if (heroHealth.health < 1) {
+    //                 alert("u suck")
+    //             }
+    // }
+
+    // console.log("Lucian's health is:" + lucianHealth.health)
+    // console.log("Your health is:" + heroHealth.health)
+
+    if (lucianHealth <= 0) {
+        
     }
-
-    console.log("Lucian's health is:" + lucianHealth.health)
-    console.log("Your health is:" + heroHealth.health)
-
 
 
 
@@ -124,6 +139,13 @@ function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
                 <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 <button class="btn-secondary btn-lg"> Flee </button>
+            </div>
+            <div className="hero-health">
+                        <h3>Your Health: {heroHealth} </h3>
+            </div>
+            <div className="enemy-health">
+            <h3>Lucian's Health: {lucianHealth}</h3>
+
             </div>
         </div>
     )

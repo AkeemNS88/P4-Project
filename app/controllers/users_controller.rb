@@ -11,11 +11,8 @@ class UsersController < ApplicationController
     end
 
     def show 
-        if current_user
-            render json: current_user, status: :ok
-        else 
-            render json: "Not logged in", status: :unauthorized
-        end 
+        user = User.find_by(id: params[:id])
+        render json: user, include: :encounters
     end
 
     def update
@@ -48,7 +45,7 @@ class UsersController < ApplicationController
     private
     
     def user_params
-        params.permit(:username, :password, :biography)
+        params.permit(:username, :password, :biography, :encounters)
     end
 end
 
