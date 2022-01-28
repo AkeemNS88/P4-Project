@@ -2,22 +2,19 @@ import React from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
-import lucian from "./Images/lucian.png"
+import lucian_image from "./Images/lucian.png"
 import { useState, useEffect } from "react";
 
-function LucianEncounter({heroStats}) {
-
-
-    const [lucianHealth, setLucianHealth] = useState(100)
-    const [heroHealth, setHeroHealth] = useState(heroStats)
-    console.log(heroHealth)
+function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
+    const [lucianHealth, setLucianHealth] = useState(lucian.health)
+    const [heroHealth, setHeroHealth] = useState(fighter.health)
 
     function lucianDamage() {
-        return Math.floor(Math.random(1 - 10) * (10 - 1) + 1)
+        return Math.floor(Math.random(1 - 10) * (10 - 1) + 11)
     }
 
     function heroDamage() {
-        return Math.floor(Math.random(1 - 10) * (10 - 1) + 50)
+        return Math.floor(Math.random(1 - 10) * (10 - 1) + 30)
     }
 
     let heroRoll = heroDamage()
@@ -39,11 +36,20 @@ function LucianEncounter({heroStats}) {
             .then((res) => res.json())
             .then((result) => setLucianHealth(result))
 
-        if (lucianHealth > 1) {
+        if (lucianHealth > 0) {
 
             { alert(`You hit for ${heroRoll} damage`) }
-        } else {
+        } else if (lucianHealth < 1 ){
             alert("You defeated Lucian!")
+            fetch(`/masters/1`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    health: 100
+                }),
+            })
         }
 
 
@@ -60,15 +66,15 @@ function LucianEncounter({heroStats}) {
                 .then((res) => res.json())
                 .then((result) => setHeroHealth(result))
 
-                if (heroHealth > 1){                
+                if (heroHealth >= 0){                
                  alert(`You got hit for ${lucianRoll} damage`) 
                 } else  if (heroHealth < 1) {
                     alert("u suck")
                 }
     }
 
-    console.log("Lucian's health is:" + lucianHealth)
-    console.log("Your health is:" + heroHealth)
+    // console.log("Lucian's health is:" + lucianhealth)
+    // console.log("Your health is:" + fighter.health)
 
 
 
@@ -91,7 +97,7 @@ function LucianEncounter({heroStats}) {
                 <h1 className="encounter-title">Encounter 1</h1>
             </div>
             <div>
-                <img className="encounter-image" src={lucian} />
+                <img className="encounter-image" src={lucian_image} />
             </div>
             <div className="text-holder">
 
