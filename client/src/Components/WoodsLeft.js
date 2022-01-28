@@ -41,7 +41,7 @@ function WoodsLeft() {
                                 .pauseFor(1000)
                                 .typeString("After inspecting the environment, you see that the coast is clear... ")
                                 .pauseFor(1000)
-                                .typeString("After sifting through some random bits and baubles only important to a ruffian, you spy a gleaming object towards the bottom of the chest..")
+                                .typeString("After sifting through some random bits and baubles only important to a commoner, you spy a gleaming object towards the bottom of the chest..")
                                 .pauseFor(1000)
                                 .typeString("It is a potion with a scroll attached to the side that reads: ")
                                 .pauseFor(1000)

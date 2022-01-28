@@ -37,7 +37,7 @@ function WoodsRight() {
                         onInit={(typewriter) => {
                             typewriter
                                 .changeDelay(50)
-                                .typeString("As you meander down the path, you spot an outofplace Potion at the base of a tree. ")
+                                .typeString("As you meander down the path, you spot an out of place Potion at the base of a tree. ")
                                 .pauseFor(1000)
                                 .typeString("You survey your surroundings before approaching the curious potion. ")
                                 .pauseFor(1000)

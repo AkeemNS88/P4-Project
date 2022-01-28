@@ -15,16 +15,7 @@ function Woods() {
     function handleRight() {
         //right path leads you to damage
         // and an encounter
-        fetch("/encounters", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify ({
-                name: "Woods Right",
-                user_id: 4,
-             })   
-            })
+    
         navigate('/woodsright')
     }
     return (

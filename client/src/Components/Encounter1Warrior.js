@@ -7,38 +7,18 @@ import LucianEncounter from "./LucianEncounter";
 import { useState, useEffect } from "react";
 
 function Encounter1Warrior() {
-    const [fighter, setFighter] = useState({})
-    //get request to all masters? 
-    //review p3 for dynamically showing stuff
-  let navigate = useNavigate()
+    let navigate = useNavigate();
 
     function handleClick(e){
         e.preventDefault()
         navigate("/lucian")
     }
     
-    function getMaster() {
-        fetch(`masters/1`)
-            .then(r => r.json())
-            .then(data => setFighter(data)
-            )
-        }
-        useEffect(getMaster, [])
-        
-      
-        let heroStats = {
-            id: fighter.id,
-            name: fighter.name,
-            health: fighter.health,
-            wealth: fighter.wealth,
-            energy: fighter.energy
-        }
-        console.log(heroStats)
         
     return (
         <div>
             <div>
-                <h1 className="encounter-title">Encounter 1</h1>
+                <h1 className="encounter-title">New Beginnings</h1>
             </div>
             <div>
                 <img className="encounter-image" src={intro} />

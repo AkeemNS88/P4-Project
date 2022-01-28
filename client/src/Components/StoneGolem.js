@@ -40,11 +40,11 @@ function StoneGolem() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify ({
-                    name: "Woods",
+                    name: "After Golem",
                     user_id: 4,
                  })   
                 })
-            navigate("/woods")
+            navigate("/afterbattle")
             (heroHealth = heroHealth)
         }  
         else if (enemyHealth < 1) {
@@ -55,11 +55,11 @@ function StoneGolem() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify ({
-                    name: "Woods",
+                    name: "After Golem",
                     user_id: 4,
                  })   
                 })
-            navigate("/woods")
+            navigate("/afterbattle")
             (heroHealth = heroHealth)
         }
 

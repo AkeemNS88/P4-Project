@@ -6,14 +6,18 @@ import lich from './Images/lich.jpg'
 
 function LichKing() {
     const [enemyHealth, setEnemyHealth] = useState(100)
-    const [heroHealth, setHeroHealth] = useState(100)
+    const [heroHealth, setHeroHealth] = useState(150)
 
     function enemyDamage() {
-        return Math.floor(Math.random(1 - 10) * (10 - 1) + 11)
+        return Math.floor(Math.random(1 - 10) * (10 - 1) + 25)
     }
 
     function heroDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 30)
+    }
+
+    function reasonRoll() {
+        return Math.floor(Math.random(1 - 5) * (5 - 1) + 1)
     }
 
     let navigate = useNavigate();
@@ -30,58 +34,69 @@ function LichKing() {
         setHeroHealth(damageH)
 
         if (enemyHealth > 0) {
-             { alert(`You hit for ${heroRoll} damage`) }
+            { alert(`You hit for ${heroRoll} damage`) }
 
         } else if (heroRoll > enemyHealth) {
-            alert("You defeated Lucian!")
+            alert("You defeated The Lich King!")
             fetch("/encounters", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify ({
-                    name: "Woods",
+                body: JSON.stringify({
+                    name: "After Lich King",
                     user_id: 4,
-                 })   
                 })
-            navigate("/woods")
-            (heroHealth = heroHealth)
-        }  
+            })
+            navigate("/afterbattle")
+                (heroHealth = heroHealth)
+        }
         else if (enemyHealth < 1) {
-            alert("You defeated Lucian!")
+            alert("You The Lich King!")
             fetch("/encounters", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify ({
-                    name: "Woods",
+                body: JSON.stringify({
+                    name: "After Lich King",
                     user_id: 4,
-                 })   
                 })
-            navigate("/woods")
-            (heroHealth = heroHealth)
+            })
+            navigate("/afterbattle")
+                (heroHealth = heroHealth)
         }
 
-        if (heroHealth > 0){                
-            alert(`You got hit for ${enemyRoll} damage`) 
-           } else if (heroHealth < 1) {
-               alert("You died")
-               navigate("/choosefighter")
-           }
+        if (heroHealth > 0) {
+            alert(`You got hit for ${enemyRoll} damage`)
+        } else if (heroHealth < 1) {
+            alert("You died")
+            navigate("/choosefighter")
         }
+    }
 
 
 
     function showTalk() {
-        alert(`It's too late for you! HOWOWWWWWWWWWWWWWWWL`)
-        let damageH = (heroHealth) - (enemyRoll)
-        setHeroHealth(damageH)
-        alert(`You got hit for ${enemyRoll} damage`)
-        if (heroHealth < 1) {
-            alert("You Died")
-            navigate("/choosefighter")
-    }
+        let roll = reasonRoll()
+
+        if (roll > 3) {
+            alert("I shall not waste my time with you, puny human. You may leave, but never let me see you again!")
+           navigate('/afterbattle')
+        } else {
+
+            alert(`You dare try to beg for forgiveness after stealing my artifacts. You will know pain!`)
+            let damageH = (heroHealth) - (enemyRoll)
+            setHeroHealth(damageH)
+            alert(`You got hit for ${enemyRoll} damage`)
+            if (heroHealth < 1) {
+                alert("You Died")
+                navigate("/choosefighter")
+            }
+        }
+
+
+
     }
 
 
@@ -100,37 +115,31 @@ function LichKing() {
                         onInit={(typewriter) => {
                             typewriter
                                 .changeDelay(50)
-                                .typeString("As you meander down the path, you spot a hidden cache half-buried in the dirt. ")
+                                .typeString("The sound gets defeaning as the figure draws near. ")
                                 .pauseFor(1000)
-                                .typeString("After inspecting the environment, you see that the coast is clear... ")
+                                .typeString('"I am The Lich King, and your foul human stench has led me here. ')
                                 .pauseFor(1000)
-                                .typeString("After sifting through some random bits and baubles only important to a ruffian, you spy a gleaming object towards the bottom of the chest..")
+                                .typeString('How dare you steal from me! ')
                                 .pauseFor(1000)
-                                .typeString("It is a potion with a scroll attached to the side that reads: ")
-                                .pauseFor(1000)
-                                .typeString('"To thee who seeks heartier fortitude, drink this potion and feel the power of resilience course through your veins"')
-                                .pauseFor(1000)
-                                .typeString("Shortly after you polish the bottle, you hear a cacophonous sound. ")
-                                .pauseFor(1000)
-                                .typeString("You turn and see a phantom-like figure approaching  you...")
+                                .typeString('Prepare to understand the meaning of pain. Raise your weapon, human filth! "')
                                 .start();
                         }}
                     />
                 </div>
             </div>
             <div className="choice-button">
-            <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
+                <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 <button class="btn-secondary btn-lg"> Flee </button>
             </div>
             <div className="hero-health">
-                        <h3>Your Health: {heroHealth} </h3>
+                <h3>Your Health: {heroHealth} </h3>
             </div>
             <div className="enemy-health">
-            <h3>Lich King's Health: {enemyHealth}</h3>
+                <h3>Lich King's Health: {enemyHealth}</h3>
 
             </div>
-    
+
         </div>
     )
 }

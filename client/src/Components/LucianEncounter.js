@@ -1,9 +1,9 @@
 import React from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Typewriter from "typewriter-effect";
 import lucian_image from "./Images/lucian.png"
 import { useState } from "react";
+import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 
 

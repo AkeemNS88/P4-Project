@@ -10,18 +10,9 @@ function ChooseFighter() {
     function handleWarrior(e) {
         e.preventDefault()
 
-
         navigate("/warrior")
     }
-    function handleMage(e) {
-        e.preventDefault()
-        navigate("/mage")
-    }
-    function handleRanger(e) {
-        e.preventDefault()
-        navigate("/ranger")
-    }
-
+    
 
     return (
         <div id="wrapper">
@@ -39,7 +30,7 @@ function ChooseFighter() {
             <h3 className="mage">Mage</h3>
             <div className="class-descrip">
                 <h3 className="class-text" > Mage, wise and cautious, in tune with the spiritual nature of the world. Starts with 50 health, 20 wealth, and 100 energy.</h3>
-                <Button onClick={handleMage} variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Choose Mage</Button>
+                <Button variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Coming Soon...</Button>
             </div>
             <img className="choose" src={enemy} />
 
@@ -47,7 +38,7 @@ function ChooseFighter() {
             <h3 className="ranger">Ranger</h3>
             <div className="class-descrip">
                 <h3 className="class-text"> Ranger, sharp shot, great attention to detail. Finds what most others don't. Starts with 80 health, 20 wealth, and 75 energy.</h3>
-                <Button onClick={handleRanger} variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Choose Ranger</Button>
+                <Button variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Coming Soon...</Button>
             </div>
             <img className="choose" src={enemy} />
         </div>

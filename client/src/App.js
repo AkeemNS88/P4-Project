@@ -6,15 +6,19 @@ import WoodsLeft from './Components/WoodsLeft';
 import WoodsRight from './Components/WoodsRight';
 import LichKing from './Components/LichKing';
 import StoneGolem from './Components/StoneGolem';
+import AfterKing from './Components/AfterKing';
 import Warrior from './Components/Warrior'
-import Mage from './Components/Mage';
-import Ranger from './Components/Ranger'
+import Thief from './Components/Thief';
+import Satan from './Components/Satan';
+import Tunnel from './Components/Tunnel';
+import Cave from './Components/Cave'
+import Rip from './Components/Rip';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ChooseFighter from './Components/ChooseFighter';
 import { useState, useEffect } from "react";
 import LoginForm from './Components/LoginForm';
-
+import Shop from './Components/Shop'
 function App() {
   // const [fighter, setFighter] = useState([])
   // const [lucian, setLucian] = useState([])
@@ -60,11 +64,17 @@ function App() {
         <Route path="/woods" element={<Woods />} />
         <Route path="/woodsleft" element={<WoodsLeft />} />
         <Route path="/lichking" element={<LichKing />} />
+        <Route path="/afterbattle" element={<AfterKing />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/thief" element={<Thief />} />
+        <Route path="/tunnel" element={<Tunnel />} />
+        <Route path="/cave" element={<Cave />} />
+        <Route path="/satan" element={<Satan />} />
         <Route path="/woodsright" element={<WoodsRight />} />
         <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />
-        <Route path="/mage" element={<Mage />} />
-        <Route path="/ranger" element={<Ranger />} />
+        <Route path="/rip" element={<Rip />} />
+
         <Route path= "/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
       </Routes>
     </Router>
