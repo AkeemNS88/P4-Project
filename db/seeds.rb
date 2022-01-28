@@ -2,21 +2,21 @@ puts "temp seeding user data"
 user_one = User.create(username: "Person", password_digest: "password")
 user_two = User.create(username: "Person Two", password_digest: "password")
 
-puts "Seeding Skill Masters"
-warrior = Master.create(name: "Gus", health: 100, wealth: 20, energy: 50)
-# mage = Master.create(name: "Mara", health: 50, wealth: 20, energy: 100, user_id: user_one.id, encounter_id:)
-# ranger = Master.create(name: "Flavie", health: 80, wealth: 20, energy: 75, user_id: user_one.id, encounter_id:)
-lucian = Master.create(name: "Lucian", health: 25, wealth: 25, energy: 50)
-lich_king = Master.create(name: "The Lich King", health: 150, wealth: 125, energy: 200)
-golem = Master.create(name: "Giant Stone Golem", health: 200, wealth: 150, energy: 50)
-banshee = Master.create(name: "Banshee Queen", health: 125, wealth: 125, energy: 250)
+# puts "Seeding Skill Masters"
+# warrior = Master.create(name: "Gus", health: 100, wealth: 20, energy: 50)
+# # mage = Master.create(name: "Mara", health: 50, wealth: 20, energy: 100, user_id: user_one.id, encounter_id:)
+# # ranger = Master.create(name: "Flavie", health: 80, wealth: 20, energy: 75, user_id: user_one.id, encounter_id:)
+# lucian = Master.create(name: "Lucian", health: 25, wealth: 25, energy: 50)
+# lich_king = Master.create(name: "The Lich King", health: 150, wealth: 125, energy: 200)
+# golem = Master.create(name: "Giant Stone Golem", health: 200, wealth: 150, energy: 50)
+# banshee = Master.create(name: "Banshee Queen", health: 125, wealth: 125, energy: 250)
 
 puts "Seeding Encounters"
-intro = Encounter.create(name: "Begin", encounter_number: 1, master_id: warrior.id, user_id: user_one.id)
-lucian = Encounter.create(name: "Lucian", encounter_number: 2, master_id: warrior.id, user_id: user_one.id )
-lich = Encounter.create(name: "Lich King", encounter_number: 3, master_id: warrior.id, user_id: user_one.id)
-golem = Encounter.create(name: "Golem", encounter_number: 4, master_id: warrior.id, user_id: user_one.id)
-banshee = Encounter.create(name: "Banshee", encounter_number: 5, master_id: warrior.id, user_id: user_one.id)
+intro = Encounter.create(name: "Begin", user_id: user_one.id)
+lucian = Encounter.create(name: "Lucian", user_id: user_one.id )
+lich = Encounter.create(name: "Lich King", user_id: user_one.id)
+golem = Encounter.create(name: "Golem", user_id: user_one.id)
+banshee = Encounter.create(name: "Banshee", user_id: user_one.id)
 
 # Encounter.encounter_number === high score
 #when die, get request for this number ^^
