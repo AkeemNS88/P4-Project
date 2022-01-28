@@ -13,8 +13,8 @@ import { useState, useEffect } from "react";
 import LoginForm from './Components/LoginForm';
 
 function App() {
-  const [fighter, setFighter] = useState({})
-  const [lucian, setLucian] = useState({})
+  const [fighter, setFighter] = useState([])
+  const [lucian, setLucian] = useState([])
 
   const [currentUser, setCurrentUser] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);

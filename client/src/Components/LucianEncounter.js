@@ -6,8 +6,8 @@ import lucian_image from "./Images/lucian.png"
 import { useState, useEffect } from "react";
 
 function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
-    const [lucianHealth, setLucianHealth] = useState(lucian.health)
-    const [heroHealth, setHeroHealth] = useState(fighter.health)
+    const [lucianHealth, setLucianHealth] = useState(lucian)
+    const [heroHealth, setHeroHealth] = useState(fighter)
 
     function lucianDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 11)
@@ -30,16 +30,16 @@ function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                health: (lucianHealth) - heroRoll
+                health: (lucianHealth.health) - heroRoll
             }),
         })
             .then((res) => res.json())
             .then((result) => setLucianHealth(result))
 
-        if (lucianHealth > 0) {
+        if (lucianHealth.health >= 0) {
 
             { alert(`You hit for ${heroRoll} damage`) }
-        } else if (lucianHealth < 1 ){
+        } else if (lucianHealth.health < 1 ){
             alert("You defeated Lucian!")
             fetch(`/masters/1`, {
                 method: 'PATCH',
@@ -60,21 +60,21 @@ function LucianEncounter({lucian, fighter, lucianStats, heroStats}) {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    health: (heroHealth) - lucianRoll
+                    health: (heroHealth.health) - lucianRoll
                 }),
             })
                 .then((res) => res.json())
                 .then((result) => setHeroHealth(result))
 
-                if (heroHealth >= 0){                
+                if (heroHealth.health >= 0){                
                  alert(`You got hit for ${lucianRoll} damage`) 
-                } else  if (heroHealth < 1) {
+                } else  if (heroHealth.health < 1) {
                     alert("u suck")
                 }
     }
 
-    // console.log("Lucian's health is:" + lucianhealth)
-    // console.log("Your health is:" + fighter.health)
+    console.log("Lucian's health is:" + lucianHealth.health)
+    console.log("Your health is:" + heroHealth.health)
 
 
 
