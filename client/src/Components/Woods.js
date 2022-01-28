@@ -8,7 +8,7 @@ function Woods() {
 
     function handleLeft() {
         //left path leads you to more health
-        
+    
         navigate('/woodsleft')
     }
 
