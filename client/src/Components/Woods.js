@@ -8,16 +8,7 @@ function Woods() {
 
     function handleLeft() {
         //left path leads you to more health
-        fetch("/encounters", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify ({
-                name: "Woods Left",
-                user_id: 4,
-             })   
-            })
+        
         navigate('/woodsleft')
     }
 
