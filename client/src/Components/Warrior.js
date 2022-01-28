@@ -1,11 +1,10 @@
 import React from "react";
-import { useEffect, useState } from "react";
 import Typewriter from "typewriter-effect";
 import enemy from "./Encounters/set1-1.jpg"
 import { useNavigate } from 'react-router-dom'
 
 
-function Warrior({currentUser}) {
+function Warrior() {
 
     let navigate = useNavigate();
     
@@ -18,8 +17,8 @@ function Warrior({currentUser}) {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify ({
-                name: "Luciannnnnnnnnnnnnnn",
-                user_id: currentUser.user_id,
+                name: "Lucian Battle",
+                user_id: 4,
              })   
             })
             navigate("/warrior-encounter")

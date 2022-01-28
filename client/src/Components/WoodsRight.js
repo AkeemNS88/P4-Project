@@ -1,6 +1,11 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import { useNavigate } from 'react-router-dom'
+
 function WoodsRight() {
+    let navigate = useNavigate();
+    //magic item to do more damage
+    //create fight
 
 
     return(

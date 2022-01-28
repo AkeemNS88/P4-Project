@@ -80,6 +80,15 @@ function Welcome({ currentUser, setCurrentUser }) {
                             onChange={handleChange}
                         />
                     </label>
+                    <label> <strong> Biography: </strong>
+                        <input
+                            id="bio-input"
+                            type='biography'
+                            name='biography'
+                            value={formData.biography}
+                            onChange={handleChange}
+                        />
+                    </label>
                     <div className='enter-button'>
                         <button type="submit" class="btn btn-dark btn-lg">Enter If You Dare</button>
                     </div>

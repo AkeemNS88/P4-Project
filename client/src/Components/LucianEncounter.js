@@ -3,7 +3,7 @@ import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Typewriter from "typewriter-effect";
 import lucian_image from "./Images/lucian.png"
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
 
