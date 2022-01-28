@@ -5,6 +5,7 @@ import Woods from './Components/Woods';
 import WoodsLeft from './Components/WoodsLeft';
 import WoodsRight from './Components/WoodsRight';
 import LichKing from './Components/LichKing';
+import StoneGolem from './Components/StoneGolem';
 import Warrior from './Components/Warrior'
 import Mage from './Components/Mage';
 import Ranger from './Components/Ranger'
@@ -60,6 +61,7 @@ function App() {
         <Route path="/woodsleft" element={<WoodsLeft />} />
         <Route path="/lichking" element={<LichKing />} />
         <Route path="/woodsright" element={<WoodsRight />} />
+        <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />
         <Route path="/mage" element={<Mage />} />
         <Route path="/ranger" element={<Ranger />} />
