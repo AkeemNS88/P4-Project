@@ -7,6 +7,7 @@ function Welcome({ currentUser, setCurrentUser }) {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
+        biography: "",
     });
     
     const handleChange = (e) => {
@@ -33,6 +34,7 @@ function Welcome({ currentUser, setCurrentUser }) {
                     setFormData({
                         username: "",
                         password: "",
+                        biography: "",
                     });
                 });
                 navigate("/choosefighter")

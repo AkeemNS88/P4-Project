@@ -8,6 +8,7 @@ const LoginForm = () => {
     const [formData, setFormData] = useState({
         username: "",
         password: "",
+        biography: "",
     });
 
     const handleChange = (e) => {
@@ -36,6 +37,7 @@ const LoginForm = () => {
                 setFormData({
                     username: "",
                     password: "",
+                    biography: "",
                 });
             });
     }
@@ -64,6 +66,15 @@ const LoginForm = () => {
                 />
                 <br />
                 <br />
+                {/* <label> <strong> Biography: </strong>
+                        <input
+                            id="biography-input"
+                            type='biography'
+                            name='biography'
+                            value={formData.biography}
+                            onChange={handleChange}
+                        />
+                    </label> */}
                 <button type="submit">Submit</button>
             </form>
             <br />

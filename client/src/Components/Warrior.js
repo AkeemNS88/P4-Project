@@ -6,22 +6,27 @@ import { useNavigate } from 'react-router-dom'
 
 
 function Warrior() {
-    const [fighter, setFighter] = useState("")
-    let navigate = useNavigate();
 
+    let navigate = useNavigate();
+    
     function handleClick(e){
         e.preventDefault()
-        navigate("/warrior-encounter")
+
+        fetch("/encounters", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify ({
+                name: "Lucian Battle",
+                user_id: 4,
+             })   
+            })
+            navigate("/warrior-encounter")
+
     }
 
-    function getMaster() {
-        fetch(`masters/1`)
-            .then(r => r.json())
-            .then(data => setFighter(data.name)
-            )
-    }
-    useEffect(getMaster, [])
-    console.log(fighter)
+    
 
     return (
         <div>

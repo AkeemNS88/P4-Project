@@ -9,6 +9,12 @@ class EncountersController < ApplicationController
         render json: encounter
     end
 
+    def create
+        encounter = Encounter.create!(encounter_params)
+        render json: encounter, status: :created
+
+    end
+
     def update
         encounter = find_encounter
         encounter.update!(encounter_params)
@@ -18,7 +24,7 @@ class EncountersController < ApplicationController
     private
 
     def encounter_params
-        params.permit(:name)
+        params.permit(:name, :user_id)
     end
 
     def record_not_found

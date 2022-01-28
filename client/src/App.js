@@ -13,8 +13,8 @@ import { useState, useEffect } from "react";
 import LoginForm from './Components/LoginForm';
 
 function App() {
-  const [fighter, setFighter] = useState([])
-  const [lucian, setLucian] = useState([])
+  // const [fighter, setFighter] = useState([])
+  // const [lucian, setLucian] = useState([])
 
   const [currentUser, setCurrentUser] = useState(null);
   const [authenticated, setAuthenticated] = useState(false);
@@ -40,39 +40,39 @@ function App() {
   // }
 
 
-  function getMaster() {
-    fetch(`masters/1`)
-        .then(r => r.json())
-        .then(data => setFighter(data)
-        )
-    }
-    useEffect(getMaster, [])
+//   function getMaster() {
+//     fetch(`masters/1`)
+//         .then(r => r.json())
+//         .then(data => setFighter(data)
+//         )
+//     }
+//     useEffect(getMaster, [])
     
   
-    const heroStats = {
-        id: fighter.id,
-        name: fighter.name,
-        health: fighter.health,
-        wealth: fighter.wealth,
-        energy: fighter.energy
-    }
-    console.log(heroStats)
+//     const heroStats = {
+//         id: fighter.id,
+//         name: fighter.name,
+//         health: fighter.health,
+//         wealth: fighter.wealth,
+//         energy: fighter.energy
+//     }
+//     console.log(heroStats)
   
-function getLucian(){
-  fetch('masters/2')
-  .then(r => r.json())
-        .then(data => setLucian(data)
-        )
-} useEffect(getLucian, [])
+// function getLucian(){
+//   fetch('masters/2')
+//   .then(r => r.json())
+//         .then(data => setLucian(data)
+//         )
+// } useEffect(getLucian, [])
 
 
-const lucianStats = {
-  id: lucian.id,
-  name: lucian.name,
-  health: lucian.health,
-  wealth: lucian.wealth,
-  energy: lucian.energy
-}
+// const lucianStats = {
+//   id: lucian.id,
+//   name: lucian.name,
+//   health: lucian.health,
+//   wealth: lucian.wealth,
+//   energy: lucian.energy
+// }
 
 //pass down state of masters here into lucianecounter, etc
 //make callback function to reference the get/patch request here ?
@@ -120,7 +120,7 @@ const lucianStats = {
         <Route path="/warrior-encounter" element={<Encounter1Warrior />} />
         <Route path="/ranger-encounter" element={<Encounter1Ranger />} />
         <Route path="/mage-encounter" element={<Encounter1Mage />} />
-        <Route path="/lucian" element={<LucianEncounter lucian={lucian} fighter={fighter} heroStats={heroStats} lucianStats={lucianStats} />} />
+        <Route path="/lucian" element={<LucianEncounter />} />
         <Route path="/warrior" element={<Warrior />} />
         <Route path="/mage" element={<Mage />} />
         <Route path="/ranger" element={<Ranger />} />

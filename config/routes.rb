@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :users, only: [:index, :create, :destroy] 
-  resources :encounters, only: [:index, :show, :update]
+  resources :users, only: [:index, :update, :create, :destroy] 
+  resources :encounters, only: [:index, :show, :create, :update]
 
   get '/me', to: "users#show"
 

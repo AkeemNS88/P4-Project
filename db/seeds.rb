@@ -1,6 +1,5 @@
 puts "temp seeding user data"
-user_one = User.create(username: "Person", password_digest: "password")
-user_two = User.create(username: "Person Two", password_digest: "password")
+
 
 # puts "Seeding Skill Masters"
 # warrior = Master.create(name: "Gus", health: 100, wealth: 20, energy: 50)
