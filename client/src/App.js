@@ -73,7 +73,7 @@ function App() {
         <Route path="/woodsright" element={<WoodsRight />} />
         <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />
-        <Route path="/rip" element={<Rip />} />
+        <Route path="/rip" element={<Rip setCurrentUser={setCurrentUser} />} />
 
         <Route path= "/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
       </Routes>
