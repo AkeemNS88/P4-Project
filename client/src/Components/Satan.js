@@ -94,14 +94,10 @@ function Satan() {
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 <button onClick={poop} class="btn-secondary btn-lg"> &#128169; </button>
             </div>
-            <div className="hero-health">
-                <h3>Your Health: {heroHealth} </h3>
+            <div className="health">
+                <h3 className="hero-health">Your Health: {heroHealth} </h3>
+                <h3 className="enemy-health">SAYTEAN's Health: {enemyHealth}</h3>
             </div>
-            <div className="enemy-health">
-                <h3> SAYTEAN Health: {enemyHealth}</h3>
-
-            </div>
-
         </div>
     )
 }

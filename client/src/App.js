@@ -72,7 +72,7 @@ function App() {
         <Route path="/thief" element={<Thief />} />
         <Route path="/tunnel" element={<Tunnel />} />
         <Route path="/cave" element={<Cave />} />
-        <Route path="/satan" element={<Satan />} />
+        <Route path="/SAYTEAN" element={<Satan />} />
         <Route path="/woodsright" element={<WoodsRight />} />
         <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />

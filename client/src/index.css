@@ -88,6 +88,7 @@ margin-right: 40px;
 }
 
 .input-form{
+  vertical-align: top;
   margin-left: auto;
   margin-right: auto;
   display:flex;
@@ -168,4 +169,23 @@ margin-left: auto;
 
 .change-bio{
   margin-bottom: 35px;
+}
+
+.health{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-style: dashed;
+  border-color: rgb(0, 0, 0);
+  max-width: 300px;
+  background-color: rgb(88, 88, 88);
+}
+
+.hero-health{
+  color:rgb(19, 231, 111)
+}
+
+.enemy-health{
+  color:red
 }

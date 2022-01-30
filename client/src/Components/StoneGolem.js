@@ -132,12 +132,9 @@ function StoneGolem() {
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
                 {/* <button class="btn-secondary btn-lg"> Flee </button> */}
             </div>
-            <div className="hero-health">
-                        <h3>Your Health: {heroHealth} </h3>
-            </div>
-            <div className="enemy-health">
-            <h3>Stone Golem's Health: {enemyHealth}</h3>
-
+            <div className="health">
+                <h3 className="hero-health">Your Health: {heroHealth} </h3>
+                <h3 className="enemy-health">Stone Golem's Health: {enemyHealth}</h3>
             </div>
     
         </div>

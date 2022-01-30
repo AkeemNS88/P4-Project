@@ -30,7 +30,7 @@ function Cave() {
              })   
             })
             
-            navigate('/satan')
+            navigate('/SAYTEAN')
     }
 
     
