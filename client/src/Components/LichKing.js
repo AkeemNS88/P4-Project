@@ -138,7 +138,7 @@ function LichKing() {
             <div className="choice-button">
                 <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
-                <button class="btn-secondary btn-lg"> Flee </button>
+                {/* <button class="btn-secondary btn-lg"> Flee </button> */}
             </div>
             <div className="hero-health">
                 <h3>Your Health: {heroHealth} </h3>

@@ -117,13 +117,13 @@ function LucianEncounter() {
                                 .changeDelay(50)
                                 .typeString("You see your arch nemesis Lucian. ")
                                 .pauseFor(1000)
-                                .typeString("He smells so bad. ")
+                                .typeString("You remember him from his time as an adventurer...  ")
                                 .pauseFor(1000)
-                                .typeString("Real bad. Like wet dog bad..")
+                                .typeString("Lycanthropy though... how did this happen to him..? ")
                                 .pauseFor(1000)
-                                .typeString("He insulted your mother. ")
+                                .typeString("Regardless he blocks your path.. you can attempt to reason with him... ")
                                 .pauseFor(1000)
-                                .typeString("What do you do? ")
+                                .typeString("if there's still any of 'him' left. ")
                                 .start();
                         }}
                     />
@@ -132,7 +132,7 @@ function LucianEncounter() {
             <div className="choice-button">
             <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
-                <button class="btn-secondary btn-lg"> Flee </button>
+                {/* <button class="btn-secondary btn-lg"> Flee </button> */}
             </div>
             <div className="hero-health">
                         <h3>Your Health: {heroHealth} </h3>
