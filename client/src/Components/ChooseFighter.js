@@ -15,6 +15,11 @@ function ChooseFighter() {
         navigate("/warrior")
     }
     
+    function handleAcc(e) {
+        e.preventDefault()
+
+        navigate("/myaccount")
+    }
 
     return (
         <div id="wrapper">

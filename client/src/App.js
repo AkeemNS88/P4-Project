@@ -13,12 +13,14 @@ import Satan from './Components/Satan';
 import Tunnel from './Components/Tunnel';
 import Cave from './Components/Cave'
 import Rip from './Components/Rip';
+import Account from './Components/Account';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ChooseFighter from './Components/ChooseFighter';
 import { useState, useEffect } from "react";
 import LoginForm from './Components/LoginForm';
 import Shop from './Components/Shop'
+import Header from './Components/Header';
 function App() {
   // const [fighter, setFighter] = useState([])
   // const [lucian, setLucian] = useState([])
@@ -56,6 +58,7 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <Routes>
         <Route path="/" element={<Welcome currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
         <Route path="/choosefighter" element={<ChooseFighter />} />
@@ -74,6 +77,7 @@ function App() {
         <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />
         <Route path="/rip" element={<Rip setCurrentUser={setCurrentUser} />} />
+        <Route path="/myaccount" element={<Account setCurrentUser={setCurrentUser} />} />
 
         <Route path="/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
       </Routes>
