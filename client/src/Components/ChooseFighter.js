@@ -1,5 +1,5 @@
 import React from "react";
-import enemy from "./Encounters/set1-1.jpg"
+import enemy from "./Encounters/warrior.jpg";
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom'
 

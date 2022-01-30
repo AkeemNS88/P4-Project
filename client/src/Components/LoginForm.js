@@ -7,8 +7,7 @@ const LoginForm = ({setCurrentUser}) => {
 
     const [formData, setFormData] = useState({
         username: "",
-        password: "",
-        biography: "",
+        password: ""      
     });
 
     const handleChange = (e) => {
@@ -29,14 +28,14 @@ const LoginForm = ({setCurrentUser}) => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(userCreds),
-        }).then((res) => {
+        })
+        .then((res) => {
             if (res.ok) {
                 res.json().then((user) => {
                     setCurrentUser(user)
                     setFormData({
                         username: "",
-                        password: "",
-                        biography: "",
+                        password: ""
                     });
                 });
                 navigate("/choosefighter")
@@ -45,7 +44,6 @@ const LoginForm = ({setCurrentUser}) => {
                     console.error(errors);
                 });
             }
-
         });
     }
 
@@ -73,21 +71,10 @@ const LoginForm = ({setCurrentUser}) => {
                 />
                 <br />
                 <br />
-                {/* <label> <strong> Biography: </strong>
-                        <input
-                            id="biography-input"
-                            type='biography'
-                            name='biography'
-                            value={formData.biography}
-                            onChange={handleChange}
-                        />
-                    </label> */}
                 <button type="submit">Submit</button>
             </form>
             <br />
             <br />
-
-            
         </>
     );
 };
