@@ -3,7 +3,7 @@ import account from "./Images/account.jpg"
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
-const Account = ({setCurrentUser}) => {
+const Account = ({currentUser, setCurrentUser}) => {
 
     const [userData, setUserData] = useState({});
     
@@ -72,10 +72,9 @@ const Account = ({setCurrentUser}) => {
         navigate('/choosefighter')
     }
     function handleLogout() {
-            fetch("/logout", { 
+            fetch("/delete", { 
                 method: 'DELETE'
             })
-            setCurrentUser(null)
             navigate('/')
         }
     

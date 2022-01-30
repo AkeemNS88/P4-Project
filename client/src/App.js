@@ -43,6 +43,8 @@ function App() {
     });
   }, []);
 
+  
+
 
   //pass down state of masters here into lucianecounter, etc
   //make callback function to reference the get/patch request here ?
@@ -77,7 +79,7 @@ function App() {
         <Route path="/stonegolem" element={<StoneGolem />} />
         <Route path="/warrior" element={<Warrior />} />
         <Route path="/rip" element={<Rip setCurrentUser={setCurrentUser} />} />
-        <Route path="/myaccount" element={<Account setCurrentUser={setCurrentUser} />} />
+        <Route path="/myaccount" element={<Account currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
 
         <Route path="/login" element={<LoginForm currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
       </Routes>
