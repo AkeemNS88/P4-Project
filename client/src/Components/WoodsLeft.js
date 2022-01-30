@@ -29,7 +29,6 @@ function WoodsLeft() {
         navigate('/lichking')
     }
 
-
     return (
         <div>
             <div>

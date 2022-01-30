@@ -11,12 +11,12 @@ function LucianEncounter() {
     const [lucianHealth, setLucianHealth] = useState(100)
     const [heroHealth, setHeroHealth] = useState(100)
     const [currentUser, setCurrentUser] = useState({});
-    
+
     useEffect(() => {
-      fetch('/me')
-          .then(r => r.json())
-          .then(data => setCurrentUser(data))
-      }, [])
+        fetch('/me')
+            .then(r => r.json())
+            .then(data => setCurrentUser(data))
+    }, [])
 
 
     function lucianDamage() {
@@ -41,7 +41,7 @@ function LucianEncounter() {
         setHeroHealth(damageH)
 
         if (lucianHealth > 0) {
-             { alert(`You hit for ${heroRoll} damage`) }
+            { alert(`You hit for ${heroRoll} damage`) }
 
         } else if (heroRoll > lucianHealth) {
             alert("You defeated Lucian!")
@@ -50,14 +50,14 @@ function LucianEncounter() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify ({
+                body: JSON.stringify({
                     name: "Woods",
                     user_id: currentUser.id,
-                 })   
                 })
+            })
             navigate("/woods")
-            (heroHealth = heroHealth)
-        }  
+                (heroHealth = heroHealth)
+        }
         else if (lucianHealth < 1) {
             alert("You defeated Lucian!")
             fetch("/encounters", {
@@ -65,22 +65,22 @@ function LucianEncounter() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify ({
+                body: JSON.stringify({
                     name: "Woods",
                     user_id: currentUser.id,
-                 })   
                 })
+            })
             navigate("/woods")
-            (heroHealth = heroHealth)
+                (heroHealth = heroHealth)
         }
 
-        if (heroHealth > 0){                
-            alert(`You got hit for ${lucianRoll} damage`) 
-           } else if (heroHealth < 1) {
-               alert("You died")
-               navigate("/choosefighter")
-           }
+        if (heroHealth > 0) {
+            alert(`You got hit for ${lucianRoll} damage`)
+        } else if (heroHealth < 1) {
+            alert("You died")
+            navigate("/choosefighter")
         }
+    }
 
 
 
@@ -92,7 +92,7 @@ function LucianEncounter() {
         if (heroHealth < 1) {
             alert("You Died")
             navigate("/choosefighter")
-    }
+        }
     }
 
     // function showFlee() {
@@ -114,7 +114,7 @@ function LucianEncounter() {
                     <Typewriter
                         onInit={(typewriter) => {
                             typewriter
-                                .changeDelay(50)
+                            .changeDelay(50)
                                 .typeString("You see your arch nemesis Lucian. ")
                                 .pauseFor(1000)
                                 .typeString("You remember him from his time as an adventurer...  ")
@@ -130,15 +130,15 @@ function LucianEncounter() {
                 </div>
             </div>
             <div className="choice-button">
-            <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
+                <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
-                {/* <button class="btn-secondary btn-lg"> Flee </button> */}
+                <button class="btn-secondary btn-lg"> Flee </button>
             </div>
             <div className="health">
-              <h3 className="hero-health">Your Health: {heroHealth} </h3>
-            <h3 className="enemy-health">Lucian's Health: {lucianHealth}</h3>
+                <h3 className="hero-health">Your Health: {heroHealth} </h3>
+                <h3 className="enemy-health">Lucian's Health: {lucianHealth}</h3>
             </div>
-    
+
         </div>
     )
 }
