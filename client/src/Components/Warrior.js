@@ -1,6 +1,6 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
-import enemy from "./Encounters/set1-1.jpg"
+import warrior from "./Encounters/warrior.jpg"
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
@@ -38,7 +38,7 @@ function Warrior() {
                 <h1 className="welcome">Warrior</h1>
             </div>
             <div>
-                <img className="portal" src={enemy} />
+                <img className="portal" src={warrior} />
             </div>
             <div className="char-text">
                 <Typewriter

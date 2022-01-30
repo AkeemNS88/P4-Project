@@ -61,7 +61,7 @@ function Cave() {
                                 .pauseFor(1000)
                                 .typeString("You shudder. ")
                                 .pauseFor(1000)
-                                .typeString("The man smirks and bleakly asks 'Are you cold Gustofferson?' ")
+                                .typeString(`The man smirks and bleakly asks 'Are you cold Gustofferson?' `)
                                 .pauseFor(1000)
                                 .typeString("Having never given the man your name, you quickly turn and ask: ")
                                 .pauseFor(1000)
