@@ -2,11 +2,18 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import enemy from "./Encounters/set1-1.jpg"
 import { useNavigate } from 'react-router-dom'
-
+import { useState, useEffect } from "react";
 
 function Warrior() {
-
     let navigate = useNavigate();
+
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
     
     function handleClick(e){
         e.preventDefault()
@@ -18,7 +25,7 @@ function Warrior() {
             },
             body: JSON.stringify ({
                 name: "Lucian Battle",
-                user_id: 4,
+                user_id: currentUser.id,
              })   
             })
             navigate("/warrior-encounter")

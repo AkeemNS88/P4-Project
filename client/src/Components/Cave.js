@@ -2,13 +2,35 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 import cave from './Images/cave.jpg'
+import { useState, useEffect } from "react";
 
 function Cave() {
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
     
     let navigate = useNavigate()
-    function handleClick(){
+
+    function handleClick(e){
+        e.preventDefault()
         alert("MEET YOUR DOOM ")
-        navigate('/satan')
+
+        fetch("/encounters", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify ({
+                name: "SAYTEAN BATTLE",
+                user_id: currentUser.id,
+             })   
+            })
+            
+            navigate('/satan')
     }
 
 

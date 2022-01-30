@@ -2,8 +2,16 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 import loot from './Images/loot.jpg'
+import { useState, useEffect } from "react";
 
 function WoodsLeft() {
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
     
     let navigate = useNavigate()
     function handleClick(){
@@ -14,7 +22,7 @@ function WoodsLeft() {
             },
             body: JSON.stringify ({
                 name: "The Lich King",
-                user_id: 4,
+                user_id: currentUser.id,
              })   
             })
       

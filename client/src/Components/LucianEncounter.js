@@ -2,7 +2,7 @@ import React from "react";
 import enemy from "./Encounters/set1-1.jpg"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import lucian_image from "./Images/lucian.png"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 
@@ -10,6 +10,14 @@ import { useNavigate } from 'react-router-dom'
 function LucianEncounter() {
     const [lucianHealth, setLucianHealth] = useState(100)
     const [heroHealth, setHeroHealth] = useState(100)
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
+
 
     function lucianDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 11)
@@ -44,7 +52,7 @@ function LucianEncounter() {
                 },
                 body: JSON.stringify ({
                     name: "Woods",
-                    user_id: 4,
+                    user_id: currentUser.id,
                  })   
                 })
             navigate("/woods")
@@ -59,7 +67,7 @@ function LucianEncounter() {
                 },
                 body: JSON.stringify ({
                     name: "Woods",
-                    user_id: 4,
+                    user_id: currentUser.id,
                  })   
                 })
             navigate("/woods")

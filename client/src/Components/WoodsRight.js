@@ -2,8 +2,16 @@ import React from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 import pot from './Images/damage-pot.jpg'
+import { useState, useEffect } from "react";
 
 function WoodsRight() {
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
 
     let navigate = useNavigate()
     function handleClick() {
@@ -14,7 +22,7 @@ function WoodsRight() {
             },
             body: JSON.stringify({
                 name: "The Stone Golem",
-                user_id: 4,
+                user_id: currentUser.id,
             })
         })
 

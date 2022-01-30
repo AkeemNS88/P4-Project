@@ -8,14 +8,12 @@ function Woods() {
 
     function handleLeft() {
         //left path leads you to more health
-    
         navigate('/woodsleft')
     }
 
     function handleRight() {
         //right path leads you to damage
         // and an encounter
-    
         navigate('/woodsright')
     }
     return (

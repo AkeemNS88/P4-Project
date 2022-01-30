@@ -10,10 +10,22 @@ class UsersController < ApplicationController
 
     end
 
+    # def show 
+    #     user = User.find_by(id: params[:id])
+    #     render json: user, include: :encounters
+    # end
+
+
     def show 
-        user = User.find_by(id: params[:id])
-        render json: user, include: :encounters
+        if current_user
+            render json: current_user, include: :encounters, status: :ok
+        else 
+            render json: "Not authenticated", status: :unauthorized
+        end 
     end
+
+
+
 
     def update
         user = User.find(params[:id])

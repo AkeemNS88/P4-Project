@@ -1,12 +1,19 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import golem from './Images/golem.jpg'
 
 function StoneGolem() {
     const [enemyHealth, setEnemyHealth] = useState(200)
     const [heroHealth, setHeroHealth] = useState(100)
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
 
     function enemyDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 15)
@@ -41,7 +48,7 @@ function StoneGolem() {
                 },
                 body: JSON.stringify ({
                     name: "After Golem",
-                    user_id: 4,
+                    user_id: currentUser.id,
                  })   
                 })
             navigate("/afterbattle")
@@ -56,7 +63,7 @@ function StoneGolem() {
                 },
                 body: JSON.stringify ({
                     name: "After Golem",
-                    user_id: 4,
+                    user_id: currentUser.id,
                  })   
                 })
             navigate("/afterbattle")

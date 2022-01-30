@@ -1,12 +1,20 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import lich from './Images/lich.jpg'
 
 function LichKing() {
     const [enemyHealth, setEnemyHealth] = useState(100)
     const [heroHealth, setHeroHealth] = useState(150)
+    
+    const [currentUser, setCurrentUser] = useState({});
+    
+    useEffect(() => {
+      fetch('/me')
+          .then(r => r.json())
+          .then(data => setCurrentUser(data))
+      }, [])
 
     function enemyDamage() {
         return Math.floor(Math.random(1 - 10) * (10 - 1) + 25)
@@ -45,7 +53,7 @@ function LichKing() {
                 },
                 body: JSON.stringify({
                     name: "After Lich King",
-                    user_id: 4,
+                    user_id: currentUser.id,
                 })
             })
             navigate("/afterbattle")
@@ -60,7 +68,7 @@ function LichKing() {
                 },
                 body: JSON.stringify({
                     name: "After Lich King",
-                    user_id: 4,
+                    user_id: currentUser.id,
                 })
             })
             navigate("/afterbattle")

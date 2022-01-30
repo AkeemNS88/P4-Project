@@ -62,7 +62,7 @@ function Satan() {
         alert("You poop your pants")
         alert("SAYTEAN is offended")
         setEnemyHealth(enemyHealth - 2)
-        alert(`You hit for 2 damage`)    }
+        alert(`You hit for 2 damage.. and you stink`)    }
 
 
     return (
