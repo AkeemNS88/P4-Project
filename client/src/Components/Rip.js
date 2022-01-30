@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 const Rip = ({ setCurrentUser }) => {
 
     const [encounters, setEncounters] = useState({});
-<<<<<<< HEAD
 
     useEffect(() => {
         fetch('/me')
@@ -14,29 +13,19 @@ const Rip = ({ setCurrentUser }) => {
             .then(data => setEncounters(data))
     }, [])
 
-    const total = encounters.encounters.length
-=======
-    
-        useEffect(() => {
-          fetch('/me')
-              .then(r => r.json())
-              .then(data => setEncounters(data))
-            }, [])
-     
-                
-                function display(){
-                    const total = encounters?.encounters?.length
-                   return(
 
-                       <h3 className="acc-title">You survived {total} encounters !</h3>
-                   )
-    
-              }
+    function display() {
+        const total = encounters?.encounters?.length
+        return (
+
+            <h3 className="acc-title">You survived {total} encounters !</h3>
+        )
+
+    }
 
 
->>>>>>> cc36181e116bed8ddbc8eaec71652ce6ee9062dd
 
-        // const total = (encounters.encounters.length)
+    // const total = (encounters.encounters.length)
     let navigate = useNavigate();
 
     function handleClick() {
