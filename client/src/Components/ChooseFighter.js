@@ -29,7 +29,7 @@ function ChooseFighter() {
             </div>
             <img className="choose" src={warrior} />
 
-            <h3 className="mage">Mage</h3>
+            <h3 className="mage">Minalus the Mage</h3>
             <div className="class-descrip">
                 <h3 className="class-text" > Mage, wise and cautious, in tune with the spiritual nature of the world. Starts with 50 health, 20 wealth, and 100 energy.</h3>
                 <Button variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Coming Soon...</Button>
@@ -37,7 +37,7 @@ function ChooseFighter() {
             <img className="choose" src={mage} />
 
 
-            <h3 className="ranger">Ranger</h3>
+            <h3 className="ranger">Seigard the Ranger</h3>
             <div className="class-descrip">
                 <h3 className="class-text"> Ranger, sharp shot, great attention to detail. Finds what most others don't. Starts with 80 health, 20 wealth, and 75 energy.</h3>
                 <Button variant="dark" className="choose-champ" style={{ fontSize: "25px" }}>Coming Soon...</Button>

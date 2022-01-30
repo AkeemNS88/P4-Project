@@ -47,13 +47,13 @@ function Warrior() {
 
                         typewriter
                             .changeDelay(50)
-                            .typeString("You are a hearty adventurer, you hit thing with sword.")
+                            .typeString("You are Gustofferson, a warrior and adventurer of great renown. ")
                             .pauseFor(1000)
-                            .typeString("Mfs dont even want a piece of you.")
+                            .typeString("As a close combat specialist you punish enemies foolish enough to step within range. ")
                             .pauseFor(1000)
-                            .typeString("You are so tuff, literally undefeated.")
+                            .typeString("....and close the gap with those that do not. ")
                             .pauseFor(1000)
-                            .typeString("The world aint ready for ur gangsta ass.")
+                            .typeString("Intimidating and battle crazed you're one adventure always up for a fight!")
                             .start();
                     }}
                 />

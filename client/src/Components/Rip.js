@@ -3,17 +3,17 @@ import rip from "./Images/rip.jpg"
 import { useNavigate } from 'react-router-dom'
 import { useState, useEffect } from "react";
 
-const Rip = ({setCurrentUser}) => {
+const Rip = ({ setCurrentUser }) => {
 
     const [encounters, setEncounters] = useState({});
-    
+
     useEffect(() => {
-      fetch('/me')
-          .then(r => r.json())
-          .then(data => setEncounters(data))
-      }, [])
-    
-      const total = encounters.encounters.length
+        fetch('/me')
+            .then(r => r.json())
+            .then(data => setEncounters(data))
+    }, [])
+
+    const total = encounters.encounters.length
 
     let navigate = useNavigate();
 
@@ -21,14 +21,14 @@ const Rip = ({setCurrentUser}) => {
         navigate('/choosefighter')
     }
     function handleLogout() {
-            fetch("/logout", { 
-                method: 'DELETE'
-            })
-            setCurrentUser(null)
-            navigate('/')
-        }
-    
-    
+        fetch("/logout", {
+            method: 'DELETE'
+        })
+        setCurrentUser(null)
+        navigate('/')
+    }
+
+
     return (
         <div>
             <div>

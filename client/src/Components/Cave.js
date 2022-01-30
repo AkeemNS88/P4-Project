@@ -33,6 +33,7 @@ function Cave() {
             navigate('/satan')
     }
 
+    
 
     return (
         <div>
