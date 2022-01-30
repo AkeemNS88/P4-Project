@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom'
 
-const LoginForm = () => {
+const LoginForm = ({setCurrentUser}) => {
 
     let navigate = useNavigate();
 
@@ -29,17 +29,24 @@ const LoginForm = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify(userCreds),
-        })
-            .then((r) => r.json())
-            .then((user) => {
-                console.log(user);
-                // setCurrentUser(user)
-                setFormData({
-                    username: "",
-                    password: "",
-                    biography: "",
+        }).then((res) => {
+            if (res.ok) {
+                res.json().then((user) => {
+                    setCurrentUser(user)
+                    setFormData({
+                        username: "",
+                        password: "",
+                        biography: "",
+                    });
                 });
-            });
+                navigate("/choosefighter")
+            } else {
+                res.json().then((errors) => {
+                    console.error(errors);
+                });
+            }
+
+        });
     }
 
     return (

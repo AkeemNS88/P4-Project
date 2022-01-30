@@ -49,6 +49,10 @@ function Welcome({ currentUser, setCurrentUser }) {
 
     let navigate = useNavigate();
 
+    function handleClick() {
+        navigate('/login')
+    }
+
    
     return (
         <div>
@@ -93,7 +97,10 @@ function Welcome({ currentUser, setCurrentUser }) {
                         <button type="submit" class="btn btn-dark btn-lg">Enter If You Dare</button>
                     </div>
                 </form>
-                <div> <LoginForm /> </div>
+                <div>
+                    <h3>Already a member?</h3> 
+                    <button onClick={handleClick} class="btn btn-dark btn-lg">Log in</button>
+                </div>
             </div>
         </div>
     )
