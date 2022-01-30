@@ -97,12 +97,12 @@ margin-right: 40px;
 
 .choose{
   display: block;
-
   margin-right: auto;
-  width: 500px;
+  /* width: 500px; */
   padding-left: 20px;
   padding-right: 20px;
   padding-bottom: 20px;
+  max-height: 500px;
   
 }
 
@@ -164,4 +164,8 @@ margin-left: auto;
 
 .hide {
   display:none
+}
+
+.change-bio{
+  margin-bottom: 35px;
 }

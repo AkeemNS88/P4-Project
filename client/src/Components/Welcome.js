@@ -98,8 +98,11 @@ function Welcome({ currentUser, setCurrentUser }) {
                     </div>
                 </form>
                 <div>
-                    <h3>Already a member?</h3> 
-                    <button onClick={handleClick} class="btn btn-dark btn-lg">Log in</button>
+                    <h3 className="acc-title">Already a member?</h3> 
+                </div>
+                <div className="choice-button">
+
+                    <button onClick={handleClick} class="btn btn-dark btn-lg">Log In</button>
                 </div>
             </div>
         </div>

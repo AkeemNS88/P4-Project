@@ -7,14 +7,25 @@ const Rip = ({setCurrentUser}) => {
 
     const [encounters, setEncounters] = useState({});
     
-    useEffect(() => {
-      fetch('/me')
-          .then(r => r.json())
-          .then(data => setEncounters(data))
-      }, [])
-    
-      const total = encounters.encounters.length
+        useEffect(() => {
+          fetch('/me')
+              .then(r => r.json())
+              .then(data => setEncounters(data))
+            }, [])
+     
+                
+                function display(){
+                    const total = encounters?.encounters?.length
+                   return(
 
+                       <h3 className="acc-title">You survived {total} encounters !</h3>
+                   )
+    
+              }
+
+
+
+        // const total = (encounters.encounters.length)
     let navigate = useNavigate();
 
     function handleClick() {
@@ -38,7 +49,7 @@ const Rip = ({setCurrentUser}) => {
                 <img className="encounter-image" src={rip} alt="ur ded" />
             </div>
             <div>
-                <h3 className="acc-title">You survived {total} encounters !</h3>
+                {display()}
             </div>
             <div className="choice-button">
                 <button onClick={handleClick} class="btn-secondary btn-lg"> Play Again? </button>

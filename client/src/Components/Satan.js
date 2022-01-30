@@ -45,6 +45,7 @@ function Satan() {
             alert(`You got hit for ${enemyRoll} damage`)
         } else if (heroHealth < 1) {
             alert("You died")
+            
             navigate("/rip")
         }
     }
