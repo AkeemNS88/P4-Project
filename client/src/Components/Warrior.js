@@ -28,7 +28,7 @@ function Warrior() {
                 user_id: currentUser.id,
              })   
             })
-            navigate("/warrior-encounter")
+            navigate("/new-beginnings")
     }
 
 

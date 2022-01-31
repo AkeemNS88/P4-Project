@@ -1,5 +1,5 @@
 import Welcome from './Components/Welcome';
-import Encounter1Warrior from './Components/Encounter1Warrior';
+import Begin from './Components/Begin';
 import LucianEncounter from './Components/LucianEncounter';
 import Woods from './Components/Woods';
 import WoodsLeft from './Components/WoodsLeft';
@@ -64,7 +64,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Welcome currentUser={currentUser} setCurrentUser={setCurrentUser} />} />
         <Route path="/choosefighter" element={<ChooseFighter />} />
-        <Route path="/warrior-encounter" element={<Encounter1Warrior />} />
+        <Route path="/new-beginnings" element={<Begin />} />
         <Route path="/lucian" element={<LucianEncounter />} />
         <Route path="/woods" element={<Woods />} />
         <Route path="/woodsleft" element={<WoodsLeft />} />

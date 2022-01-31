@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import LucianEncounter from "./LucianEncounter";
 import { useState, useEffect } from "react";
 
-function Encounter1Warrior() {
+function Begin() {
     let navigate = useNavigate();
 
     function handleClick(e){
@@ -33,19 +33,18 @@ function Encounter1Warrior() {
                             typewriter
 
                                 .changeDelay(50)
-                                .typeString("You are hunting for someone.")
+                                .typeString("You are hunting for someone. ")
                                 .pauseFor(1000)
-                                .typeString("Someone who has wronged you.")
+                                .typeString("Someone who has wronged you. ")
                                 .pauseFor(1000)
-                                .typeString("Many years ago, this person took something from you.")
+                                .typeString("Many years ago, this person took something from you. ")
                                 .pauseFor(1000)
-                                .typeString("You have spent a lot of time tracking him down,")
+                                .typeString("You have spent a lot of time tracking him down, ")
                                 .pauseFor(1000)
-                                .typeString("And now you are close Very close.")
+                                .typeString("And now you are close. " )
+                                .typeString("Very close.")
                                 .pauseFor(1000)
-                                .typeString("That person's name is... Lucian.")
-                                .pauseFor(1000)
-                                .typeString("Proper backstory for real will end up here....")
+                                .typeString("That person's name is... Lucian. ")
                                 .start();
                         }}
                     />
@@ -61,4 +60,4 @@ function Encounter1Warrior() {
     )
 }
 
-export default Encounter1Warrior
+export default Begin
