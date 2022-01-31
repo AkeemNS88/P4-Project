@@ -13,8 +13,8 @@ function Shop() {
     
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">Glorious Googaws' Goods</h1>
+            <div className="welcome">
+                <h1 className="welcome">Glorious Googaws' Goods</h1>
             </div>
             <div>
                 <img className="encounter-image" src={shop} />

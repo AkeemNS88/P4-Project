@@ -94,8 +94,8 @@ function StoneGolem() {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">The Stone Golem</h1>
+            <div className="welcome">
+                <h1 className="welcome">The Stone Golem</h1>
             </div>
             <div>
                 <img className="encounter-image" src={golem} alt="stuff"/>

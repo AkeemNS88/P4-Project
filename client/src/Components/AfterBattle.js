@@ -3,7 +3,7 @@ import Typewriter from "typewriter-effect";
 import { useNavigate } from 'react-router-dom'
 import fire from './Images/fire.jpg'
 
-function AfterKing() {
+function AfterBattle() {
     
     let navigate = useNavigate()
     function handleClick(){
@@ -13,8 +13,8 @@ function AfterKing() {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">Recover</h1>
+            <div className="welcome">
+                <h1 className="welcome">Recover</h1>
             </div>
             <div>
                 <img className="encounter-image" src={fire} />
@@ -47,4 +47,4 @@ function AfterKing() {
     )
 }
 
-export default AfterKing
+export default AfterBattle

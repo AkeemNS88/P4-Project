@@ -95,15 +95,11 @@ function LucianEncounter() {
         }
     }
 
-    // function showFlee() {
-    //     //render function here that will take player to another route
-    //     //bring back lucian in their storyline to fight with no escape.
-    // }
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">Battle With Lucian</h1>
+            <div className="welcome">
+                <h1 className="welcome">Battle With Lucian</h1>
             </div>
             <div>
                 <img className="encounter-image" src={lucian_image} />
@@ -132,7 +128,6 @@ function LucianEncounter() {
             <div className="choice-button">
                 <button onClick={updateHealth} class="btn-secondary btn-lg"> Attack </button>
                 <button onClick={showTalk} class="btn-secondary btn-lg"> Reason </button>
-                <button class="btn-secondary btn-lg"> Flee </button>
             </div>
             <div className="health">
                 <h3 className="hero-health">Your Health: {heroHealth} </h3>

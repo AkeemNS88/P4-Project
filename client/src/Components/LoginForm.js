@@ -48,8 +48,8 @@ const LoginForm = ({setCurrentUser}) => {
     }
 
     return (
-        <>
-            <h1>Please Log In</h1>
+        <div className="welcome">
+            <h1 className="welcome">Please Log In</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="username">Username: </label>
                 <input
@@ -75,7 +75,7 @@ const LoginForm = ({setCurrentUser}) => {
             </form>
             <br />
             <br />
-        </>
+        </div>
     );
 };
 

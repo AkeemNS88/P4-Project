@@ -14,8 +14,8 @@ function Thief() {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">A Shady Figure</h1>
+            <div className="welcome">
+                <h1 className="welcome">A Shady Figure</h1>
             </div>
             <div>
                 <img className="encounter-image" src={thief} />

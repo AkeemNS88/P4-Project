@@ -6,7 +6,7 @@ import WoodsLeft from './Components/WoodsLeft';
 import WoodsRight from './Components/WoodsRight';
 import LichKing from './Components/LichKing';
 import StoneGolem from './Components/StoneGolem';
-import AfterKing from './Components/AfterKing';
+import AfterBattle from './Components/AfterBattle';
 import Warrior from './Components/Warrior'
 import Thief from './Components/Thief';
 import Satan from './Components/Satan';
@@ -69,7 +69,7 @@ function App() {
         <Route path="/woods" element={<Woods />} />
         <Route path="/woodsleft" element={<WoodsLeft />} />
         <Route path="/lichking" element={<LichKing />} />
-        <Route path="/afterbattle" element={<AfterKing />} />
+        <Route path="/afterbattle" element={<AfterBattle />} />
         <Route path="/shop" element={<Shop />} />
         <Route path="/thief" element={<Thief />} />
         <Route path="/tunnel" element={<Tunnel />} />

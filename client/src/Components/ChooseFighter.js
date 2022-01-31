@@ -11,19 +11,12 @@ function ChooseFighter() {
 
     function handleWarrior(e) {
         e.preventDefault()
-
         navigate("/warrior")
-    }
-    
-    function handleAcc(e) {
-        e.preventDefault()
-
-        navigate("/myaccount")
     }
 
     return (
         <div id="wrapper">
-            <div>
+            <div className="welcome">
                 <h1 className="welcome">Choose Your Fighter!</h1>
             </div>
 

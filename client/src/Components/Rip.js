@@ -42,8 +42,8 @@ const Rip = ({ setCurrentUser }) => {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">You Are Dead LOL </h1>
+            <div className="welcome">
+                <h1 className="welcome">You Are Dead LOL </h1>
             </div>
             <div>
                 <img className="encounter-image" src={rip} alt="ur ded" />
@@ -53,7 +53,7 @@ const Rip = ({ setCurrentUser }) => {
             </div>
             <div className="choice-button">
                 <button onClick={handleClick} class="btn-secondary btn-lg"> Play Again? </button>
-                <button onClick={handleLogout} class="btn-secondary btn-lg"> Delete Account Forever :(</button>
+                <button onClick={handleLogout} class="btn-secondary btn-lg"> Log Out </button>
             </div>
         </div>
     )

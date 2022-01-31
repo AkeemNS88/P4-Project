@@ -13,8 +13,8 @@ function Tunnel() {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">The Smelly Tunnels</h1>
+            <div className="welcome">
+                <h1 className="welcome">The Smelly Tunnels</h1>
             </div>
             <div>
                 <img className="encounter-image" src={tunnel} />

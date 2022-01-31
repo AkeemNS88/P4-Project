@@ -37,8 +37,8 @@ function Cave() {
 
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">Cave of Darkness</h1>
+            <div className="welcome">
+                <h1 className="welcome">Cave of Darkness</h1>
             </div>
             <div>
                 <img className="encounter-image" src={cave} />

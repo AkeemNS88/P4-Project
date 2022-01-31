@@ -17,8 +17,8 @@ function Encounter1Warrior() {
         
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">New Beginnings</h1>
+            <div className="welcome">
+                <h1 className="welcome">New Beginnings</h1>
             </div>
             <div>
                 <img className="encounter-image" src={intro} />

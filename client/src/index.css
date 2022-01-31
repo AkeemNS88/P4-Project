@@ -2,6 +2,10 @@ body {
   background-image: url(https://i.ibb.co/bHdR5N9/papyrus.jpg);
 }
 
+*{
+  font-family: 'MedievalSharp';
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -12,6 +16,8 @@ code {
   margin-top: 30px;
   margin-bottom: 40px;
   font-size: 2.2em;
+  font-weight: bold;
+  font-family: 'MedievalSharp';
 }
 
 .portal{
@@ -85,6 +91,8 @@ margin-right: 40px;
   text-align: center;
   margin-top: 15px;
   margin-bottom: 15px;
+  font-family: 'MedievalSharp';
+  font-weight: 800;
 }
 
 .input-form{

@@ -81,8 +81,8 @@ const Account = ({currentUser, setCurrentUser}) => {
     
     return (
         <div>
-            <div>
-                <h1 className="encounter-title">My Account </h1>
+            <div className="welcome">
+                <h1 className="welcome">My Account </h1>
             </div>
             <div>
                 <img className="encounter-image" src={account} alt="ur account" />
@@ -109,7 +109,7 @@ const Account = ({currentUser, setCurrentUser}) => {
                     </form>
                             </div>
             <div className="choice-button">
-            <button onClick={handleClick} class="btn-secondary btn-lg"> Play Again? </button>
+            <button onClick={handleClick} class="btn-secondary btn-lg"> Choose Fighter </button>
             <button onClick={handleSubmit} class="btn-secondary btn-lg"> Change Bio </button>
                 <button onClick={handleLogout} class="btn-secondary btn-lg"> Delete Account Forever :(</button>
             </div>

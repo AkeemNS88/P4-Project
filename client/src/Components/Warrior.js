@@ -34,7 +34,7 @@ function Warrior() {
 
     return (
         <div>
-            <div>
+            <div className="welcome">
                 <h1 className="welcome">Warrior</h1>
             </div>
             <div>
