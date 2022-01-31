@@ -17,7 +17,7 @@ function ChooseFighter() {
     return (
         <div id="wrapper">
             <div className="welcome">
-                <h1 className="welcome">Choose Your Fighter!</h1>
+                <h1 className="welcome">Choose Your Fighter</h1>
             </div>
 
             <h3 className="warrior">Warrior</h3>

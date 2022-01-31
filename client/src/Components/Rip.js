@@ -18,7 +18,7 @@ const Rip = ({ setCurrentUser }) => {
         const total = encounters?.encounters?.length
         return (
 
-            <h3 className="acc-title">You survived {total} encounters !</h3>
+            <h3 className="acc-title">You survived {total} encounters</h3>
         )
 
     }

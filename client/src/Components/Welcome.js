@@ -9,7 +9,7 @@ function Welcome({ currentUser, setCurrentUser }) {
         password: "",
         biography: "",
     });
-    
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -53,7 +53,7 @@ function Welcome({ currentUser, setCurrentUser }) {
         navigate('/login')
     }
 
-   
+
     return (
         <div>
             <div className="welcome">
@@ -64,7 +64,7 @@ function Welcome({ currentUser, setCurrentUser }) {
             </div>
             <div>
                 <h3 className="acc-title">Make An Account</h3>
-                
+
                 <form onSubmit={handleSubmit} className="input-form">
                     <label><strong>Username: </strong>
                         <input
@@ -98,7 +98,7 @@ function Welcome({ currentUser, setCurrentUser }) {
                     </div>
                 </form>
                 <div>
-                    <h3 className="acc-title">Already a member?</h3> 
+                    <h3 className="acc-title">Already a member?</h3>
                 </div>
                 <div className="choice-button">
 

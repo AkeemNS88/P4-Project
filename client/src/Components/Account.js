@@ -16,7 +16,7 @@ const Account = ({currentUser, setCurrentUser}) => {
                 
                 function display(){
                     const total = userData?.encounters?.length
-                   return(<h3 className="acc-title">You have survived a total of {total} encounters so far!</h3>)
+                   return(<h3 className="acc-title">You have survived a total of {total} encounters so far...</h3>)
      }
 
 
