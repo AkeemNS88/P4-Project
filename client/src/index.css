@@ -1,13 +1,199 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://i.ibb.co/bHdR5N9/papyrus.jpg);
+}
+
+*{
+  font-family: 'MedievalSharp';
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+  font-size: 2.2em;
+  font-weight: bold;
+  font-family: 'MedievalSharp';
+}
+
+.portal{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 500px;
+}
+
+.enter-button{
+  display: block;
+  justify-content: center;
+  display: flex;
+  margin-top: 20px;
+}
+
+.btn:hover{
+  transform: scale(1.2);
+}
+
+.encounter-title{
+  text-align: center;
+}
+
+.choice-button{
+  display: block;
+  justify-content: center;
+  display: flex;
+}
+
+.encounter-image{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+  width: 600px;
+  margin-bottom: 40px;
+
+}
+
+.btn-secondary{
+padding-left: 20px;
+padding-right: 20px;
+margin-left: 40px;
+margin-right: 40px;
+}
+.btn-secondary:hover{
+  transform: scale(1.05);
+}
+
+.story-text{
+  font-family: sans-serif;
+  font-weight:800;
+  font-size: 1.2em;
+  text-align: center;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.text-holder{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  padding-bottom: 30px;
+}
+
+.acc-title{
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-family: 'MedievalSharp';
+  font-weight: 800;
+}
+
+.input-form{
+  vertical-align: top;
+  margin-left: auto;
+  margin-right: auto;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.choose{
+  display: block;
+  margin-right: auto;
+  /* width: 500px; */
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  max-height: 500px;
+  
+}
+
+.warrior{
+  margin-left: 200px;
+}
+
+.mage{
+  margin-left: 200px;
+}
+
+.ranger{
+  margin-left: 200px;
+}
+
+.class-descrip{
+  display: block;
+float: right; 
+width: 69%;
+  
+}
+
+.choose-div{
+  width: 400px;
+}
+
+.choose-champ{
+  display: block;
+  float: right;
+  width: 20%;
+  height:80px;
+  margin-right: 800px;
+
+}
+
+#wrapper {
+min-width: 1080px;
+max-width: 2160px;
+margin-right: auto;
+margin-left: auto;
+
+}
+
+.class-text{
+  display: inline-flex;
+  width: 300px
+}
+
+.char-text{
+  font-family: sans-serif;
+  font-weight:800;
+  font-size: 1.2em;
+  text-align: center;
+ margin-left: auto;
+ margin-right: auto;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.hide {
+  display:none
+}
+
+.change-bio{
+  margin-bottom: 35px;
+}
+
+.health{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-style: dashed;
+  border-color: rgb(0, 0, 0);
+  max-width: 300px;
+  background-color: rgb(88, 88, 88);
+}
+
+.hero-health{
+  color:rgb(19, 231, 111)
+}
+
+.enemy-health{
+  color:red
 }
